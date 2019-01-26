@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>《算法导论》第七章 快速排序 | D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="D">
+  
+  <meta name="description" content="《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。">
+<meta name="keywords" content="算法导论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《算法导论》第七章 快速排序">
+<meta property="og:url" content="http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/index.html">
+<meta property="og:site_name" content="D">
+<meta property="og:description" content="《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zydi.github.io/图7-1.png">
+<meta property="og:image" content="http://zydi.github.io/图7-2.png">
+<meta property="og:image" content="http://zydi.github.io/图7-3.png">
+<meta property="og:updated_time" content="2018-08-05T07:40:36.796Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《算法导论》第七章 快速排序">
+<meta name="twitter:description" content="《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。">
+<meta name="twitter:image" content="http://zydi.github.io/图7-1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet" type="text/css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">D</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        D
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        宇宙无敌大帅比！
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-算法导论 第七章 快速排序" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      《算法导论》第七章 快速排序
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/算法/">算法</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-07-28
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>《算法导论》第七章 快速排序<br>快速排序通常是实际排序应用中最好的选择。</p>
+<a id="more"></a>
+<h3 id="快速排序的描述"><a href="#快速排序的描述" class="headerlink" title="快速排序的描述"></a>快速排序的描述</h3><p>对一个典型的子数组A[p..r]进行快速排序的三步分治过程：<br><b>分解：</b>数组A[p..r]被划分为两个（可能为空）的子数组A[p..q-1]和A[q+1..r]，使得A[p..q-1]中的每一个元素都小于等于A[q]，而A[q]也小于等于A[q+1..r]中的每个元素。其中，计算下标q也是划分过程的一部分。<br><b>解决：</b>通过递归调用快速排序，对子数组A[p..q-1]和A[q+1..r]进行排序。<br><b>合并：</b>因为子数组都是原址排序的，所以不需要合并操作：数组A[p..r]已经有序。</p>
+<p>下面的程序实现快速排序：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QUICKSORT(A,p,r)</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> p &lt; r</span><br><span class="line">	q = PARTITION(A,p,r)</span><br><span class="line">	QUICKSORT(A,p,q-1)</span><br><span class="line">	QUICKSORT(A,q+1,r)</span><br></pre></td></tr></table></figure>
+<p>为了排序一个数组A的全部元素，初始调用是QUICKSORT(A,1,A.length)。<br><b>数组的划分</b><br>算法的关键部分是PARTITION过程，它实现了对子数组A[p..r]的原址排序。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PARTITION(A,p,r)</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = A[r]</span><br><span class="line">i = p - 1</span><br><span class="line"><span class="keyword">for</span> j = p to r - 1</span><br><span class="line">	<span class="keyword">if</span> A[j] ≤ x</span><br><span class="line">		i = i + 1</span><br><span class="line">		exchange A[i] with A[j]</span><br><span class="line">exchange A[i+1] with A[r]</span><br><span class="line"><span class="built_in">return</span> i + 1</span><br></pre></td></tr></table></figure>
+<p>图7-1显示了PARTITION如何在一个包含8个元素的数组上进行操作的过程。PARTITION总是选择一个x=A[r]作为<b>主元</b>，并围绕它来划分子数组A[p..r.<br><img src="/图7-1.png"><br><img src="/图7-2.png"></p>
+<h3 id="快速排序的性能"><a href="#快速排序的性能" class="headerlink" title="快速排序的性能"></a>快速排序的性能</h3><p>快速排序的运行时间依赖于划分是否平衡，而平衡与否又依赖于用于划分的元素。如果划分是平衡的，那么快速排序算法性能与归并排序一样。如果划分是不平衡的，那么快速排序的性能就接近于插入排序了。<br><b>最坏情况划分</b><br>当划分产生的两个子问题分别包含了n-1个元素和0个元素时，快速排序的最坏情况发生了。假设算法的每一次递归调用中都出现这种不平衡划分，划分操作的时间复杂度是Θ(n)。由于对一个大小为0的数组进行递归调用会直接返回，因此T(0)=Θ(1).<br>于是算法运行时间的递归式可以表示为：<br>        T(n)=T(n-1)+T(0)+Θ(n)=T(n-1)+Θ(n)<br>解为T(n)=Θ(n²)。<br><b>最好情况划分</b><br>在可能的最平衡的划分中，PARTITION得到的两个子问题，其中一个的规模为⌊n/2⌋，另一个为⌈n/2⌉-1。这种情况下，快速排序的性能非常好。此时，算法隐形时间的递归式为：<br>        T(n)=2T(n/2)+Θ(n)<br>在上式中，忽略了一些余项以及减1操作的影响，解为T(n)=Θ(nlgn)。<br><b>平衡划分</b><br>快速排序的平均运行时间更接近于其最好情况，而非最坏情况。<br>例如，假设划分算法总是产生9：1的划分，此时，得到快速排序时间复杂度的递归式为：<br>        T(n)=T(9n/10)+T(n/10)+cn<br>这里，显式地写出了Θ(n)项中所隐含的常数c。图7-4显示了这一递归调用所对应的递归树。<br>注意，书中每一层的代价都是cn，直到在深度log_n10 n=Θ(lgn)处达到递归的边界条件时为止，之后每层代价至多为cn。递归在深度为log_10/9 n<br>=Θ(lgn)处终止。因此，快速排序的总代价为O(nlgn)。<br><img src="/图7-3.png"><br><b>对于平均情况的直观观察</b><br>在平均情况下，PARTITION所产生的划分同时混合有“好”和“差”的划分。此时，在与PARTITION平均情况执行过程所对应的递归树中，好和差的划分是随机分布的。基于直觉，假设好和差的划分交替出现在树的各层上，并且好的划分是最好情况划分，而差的划分是最坏情况划分，图7-5(a)显示除了递归树的连续两层上的划分情况。<br>在一个差的划分后面接着一个好的划分，这种组合产生出三个子数组，大小分别为0、(n-1)/2-1和(n-1)/2。这一组合的划分代价为Θ(n)+Θ(n-1)=Θ(n)。该代价并不比图7-5(b)中的更差。在图7-5(b)中，一层划分就产生出大小为(n-1)/2的两个子数组，划分代价为Θ(n)。但是，后者的划分是平衡的。因此，当好和差的划分交替出现时，快速排序的时间复杂度与拳师号的划分时一样，仍然是O(nlgn)。区别只是O符号中隐含的常数因子要略大一些。</p>
+<h3 id="快速排序的随机化版本"><a href="#快速排序的随机化版本" class="headerlink" title="快速排序的随机化版本"></a>快速排序的随机化版本</h3><p>如果采用一种称为<b>随机抽样</b>的随机化技术，可以使得分析变得更加简单。随机抽样是从子数组A[p..r]中随机选择一个元素作为主元。<br>首先将A[r]与从A[p..r]中随机选出的一个元素交换。通过对序列p,…,r的随机抽样，我们可以保证主元元素x=A[r]是等概率地从子数组的r-p+1个元素中选取的。因为主元元素是随机选取的，我们期望在平均情况下，对输入数组的划分是比较均衡的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RANDOMIZED-PARTITION(A,p,r)</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i = RANDOM(p,r)</span><br><span class="line">exchange A[r] with A[i]</span><br><span class="line"><span class="built_in">return</span> PARTITION(A,p,r)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RANDOMIZED-QUICKSORT(A,p,r)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> p &lt; r</span><br><span class="line">	q = RANDOMIZED-PARTITION(A,p,r)</span><br><span class="line">	RANDOMIZED-QUICKSORT(A,p,q-1)</span><br><span class="line">	RANDOMIZED-QUICKSORT(A,q+1,r)</span><br></pre></td></tr></table></figure>
+<h3 id="快速排序分析"><a href="#快速排序分析" class="headerlink" title="快速排序分析"></a>快速排序分析</h3><h4 id="最坏情况分析"><a href="#最坏情况分析" class="headerlink" title="最坏情况分析"></a>最坏情况分析</h4><h4 id="期望运行时间"><a href="#期望运行时间" class="headerlink" title="期望运行时间"></a>期望运行时间</h4>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年08月05日 15:40</p>
+        <p>原始链接： <a class="post-url" href="/2018/07/28/算法导论 第七章 快速排序/" title="《算法导论》第七章 快速排序">http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/</a></p>
+        <!--
+        <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
+        -->
+        <footer>
+            <a href="http://zydi.github.io">
+                <img src="/images/logo.png" alt="D">
+                D
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        喵喵喵~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/&title=《《算法导论》第七章 快速排序》 — D&pic=/images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/&title=《《算法导论》第七章 快速排序》 — D&source=《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《《算法导论》第七章 快速排序》 — D&url=http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/&via=http://zydi.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zydi.github.io/2018/07/28/算法导论 第七章 快速排序/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/算法导论/" class="color5">算法导论</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速排序的描述"><span class="post-toc-text">快速排序的描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速排序的性能"><span class="post-toc-text">快速排序的性能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速排序的随机化版本"><span class="post-toc-text">快速排序的随机化版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速排序分析"><span class="post-toc-text">快速排序分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最坏情况分析"><span class="post-toc-text">最坏情况分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#期望运行时间"><span class="post-toc-text">期望运行时间</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/07/28/深度学习 NG笔记 01第一周/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          NG深度学习笔记 01 第一周
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/07/22/算法导论 第六章 堆排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">《算法导论》第六章 堆排序</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by D
+      &copy; 2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://zydi.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/tset/" style="font-size: 10px;">tset</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/tset/" style="font-size: 10px;">tset</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>《算法导论》第八章 线性时间排序 | D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="D">
+  
+  <meta name="description" content="《算法导论》第八章 线性时间排序在排序的最终结果中，各元素的次序依赖于它们之间的比较。这类排序算法称为比较排序。">
+<meta name="keywords" content="算法导论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《算法导论》第八章 线性时间排序">
+<meta property="og:url" content="http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/index.html">
+<meta property="og:site_name" content="D">
+<meta property="og:description" content="《算法导论》第八章 线性时间排序在排序的最终结果中，各元素的次序依赖于它们之间的比较。这类排序算法称为比较排序。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zydi.github.io/图8-1.png">
+<meta property="og:image" content="http://zydi.github.io/图8-2.png">
+<meta property="og:image" content="http://zydi.github.io/图8-3.png">
+<meta property="og:image" content="http://zydi.github.io/图8-4.png">
+<meta property="og:updated_time" content="2018-08-12T05:20:03.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《算法导论》第八章 线性时间排序">
+<meta name="twitter:description" content="《算法导论》第八章 线性时间排序在排序的最终结果中，各元素的次序依赖于它们之间的比较。这类排序算法称为比较排序。">
+<meta name="twitter:image" content="http://zydi.github.io/图8-1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet" type="text/css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">D</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        D
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        宇宙无敌大帅比！
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-算法导论 第八章 线性时间排序" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      《算法导论》第八章 线性时间排序
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/算法/">算法</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-08-12
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>《算法导论》第八章 线性时间排序<br>在排序的最终结果中，各元素的次序依赖于它们之间的比较。这类排序算法称为比较排序。</p>
+<a id="more"></a>
+<h3 id="8-1-排序算法的下界"><a href="#8-1-排序算法的下界" class="headerlink" title="8.1 排序算法的下界"></a>8.1 排序算法的下界</h3><h4 id="决策树模型"><a href="#决策树模型" class="headerlink" title="决策树模型"></a>决策树模型</h4><p>比较排序可以被抽象为一棵决策树。决策树是一颗完全二叉树，它可以表示在给定输入规模情况下，某一特定排序算法对所有元素的比较操作。<br><img src="/图8-1.png"><br><br><br>对一个正确的比较排序算法来说，n个元素的n！种可能的排列都应该出现在决策树的叶结点上。而且每一个叶结点都必须是可以从根结点经由某条路径到达的，该路径对应于比较排序的一次实际执行过程（我们称这种叶结点为“可达的”）。</p>
+<h4 id="最坏情况的下界"><a href="#最坏情况的下界" class="headerlink" title="最坏情况的下界"></a>最坏情况的下界</h4><p>在决策树中，从根结点到任意一个可达叶结点之间最长简单路径的长度，表示的是对应的排序算法中最坏情况下的比较次数。因此，一个比较排序算法中的最坏情况比较次数就等于其决策树的高度。同时，当决策树中每种排列都是以可达的叶结点的形式出现时，该决策树高度的下界也就是比较排序算法运行时间的下界。<br>定理8.1  在最坏情况下，任何比较排序算法都需要做Ω(nlgn)次比较。<br>推论8.2  堆排序和归并排序都是渐近最优的比较排序算法。</p>
+<h3 id="8-2-计数排序"><a href="#8-2-计数排序" class="headerlink" title="8.2 计数排序"></a>8.2 计数排序</h3><p>计数排序假设n个输入元素中的每一个都是在0到k区间内的一个整数，其中k为某个整数。当k=O(n)时，排序的运行时间为Θ(n)。<br>基本思想：对每一个输入元素x，确定小于x的元素个数。利用这一信息，就可以直接把x放到它在输出数组中的位置上了。在技术排序算法的代码中，假设输入是一个数组A[1..n]，A.length=n。我们还需要两个数组：B[1..n]存放排序的输出，C[0..k]提供临时存储空间。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COUNTING-SORT(A,B,k)</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> C[0..k] be a new array</span><br><span class="line"><span class="keyword">for</span> i = 0 to k</span><br><span class="line">        C[i] = 0</span><br><span class="line"><span class="keyword">for</span> j = 1 to A.length</span><br><span class="line">        C[A[j]] = C[A[j]] + 1</span><br><span class="line">//C[i] now contains the number of elements equal to i.</span><br><span class="line"><span class="keyword">for</span> i = 1 to k</span><br><span class="line">        C[i] = C[i] + C[i-1]</span><br><span class="line">//C[i] now contains the number of elements less than or equal to i.</span><br><span class="line"><span class="keyword">for</span> j = A.length downto 1</span><br><span class="line">        B[C[A[j]]] = A[j]</span><br><span class="line">        C[A[j]] = C[A[j]] - 1</span><br></pre></td></tr></table></figure>
+<p>图8-2图示了计数排序的运行过程。在第2~3行for循环的初始化操作之后，数组C的值全被置为0；第4~5行的for循环遍历每一个输入元素。如果一个输入元素的值为i，就将C[i]值加1。于是，在第5行执行完后，C[i]保存的就是等于i的元素的个数，其中i=0，1，…，k。第7~8行通过加总计算确定对每一个i=0，1，…，k，有多少输入元素是小于或等于i的。<br><br><br><img src="/图8-2.png"><br>最后，在第10~12行的for循环部分，把每个元素A[j]放到它在输出数组B中的正确位置上。如果所有n个元素都是互异的，那么当第一次执行第10行时，对每一个A[j]值来说，C[A[j]]就是A[j]在输出数组中的最终正确位置。<br><b>计数排序的时间代价</b>：第2~3行的for循环所花时间为Θ(k)，第4~5行的for循环所花时间为Θ(n)，第7~8行的for循环所花时间为Θ(k)，第10~12行的for循环所花时间为Θ(n)。这样，总的时间代价就是Θ(k+n)。在实际工作中，当k=O(n)时，我们一般会采用技术排序，这时的运行时间为Θ(n)。计数排序是<b>稳定的</b>：具有相同值的元素在输出数组中的相对次序与它们在输入数组中的相对次序相同。</p>
+<h3 id="8-3-基数排序"><a href="#8-3-基数排序" class="headerlink" title="8.3 基数排序"></a>8.3 基数排序</h3><p>基数排序是一种用在卡片排序机上的算法，现在你只能在博物馆找到这种卡片排序机了。一张卡片有80列，在每一列上机器可以选择在12个为之中的任一处穿孔。通过机械操作，我们可以对排序机“编程”来检查每个卡片中的给定列，然后根据穿孔的位置将它们分别放入12个容器中。操作员就可以逐个容器地来收集卡片，其中第一个位置穿孔的卡片在最上面，其次是第二个位置穿孔的卡片，以此类推。计数排序是先按最低有效位进行排序来解决卡片排序问题的。然后算法将所有卡片合并成一叠，其中0号容器中的卡片都在1号容器中的卡片之前，而1号容器中的卡片又在2号容器中的卡片之前，以此类推。之后，用同样的方法按次低有效位对所有的卡片进行排序，并把拍好的卡片再次合并成一叠。充父这一过程，直到对所有的d位数字都进行了排序。此时，所有卡片已按d位数都进行了排序。此时，所有卡片已按d位数完全排好序。所以，对这一叠卡片的排序仅需要进行d轮。图8-3说明了“一叠”7张2位数卡片的基数排序过程。<br><img src="/图8-3.png"><br>假设n个d位的元素存放在数组A中，其中第1位是最低位，第d位是最高位。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RADIX-SORT(A,d)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i = 1 to d</span><br><span class="line">        use a stable sort to sort array A on digit i</span><br></pre></td></tr></table></figure>
+<p><b>引理8.3</b>  给定n个d位数，其中每一个位数有k个可能的取值。如果RADIX-SORT使用的稳定排序方法耗时Θ(n+k)，那么它就可以在Θ(d(n+k))时间内将这些数排好序。<br><b>引理8.4</b>  给定一个b位数和任何正整数r≤b，如果RADIX-SORT使用的稳定排序算法对数据取值空间是0到k的输入进行排序耗时Θ(n+k)，那么它就可以在Θ((b/r)(n+2r))时间内将这些数排好序。</p>
+<h3 id="8-4-桶排序"><a href="#8-4-桶排序" class="headerlink" title="8.4 桶排序"></a>8.4 桶排序</h3><p>桶排序假设输入数据服从均匀分布，平均情况下它的时间代价为O(n)。桶排序将[0,1)区间划分为n个相同大小的子区间，或称为桶。然后，将n个输入数分别放到各个桶中。因为输入数据是均匀的、独立地分布在[0,1)区间上，所以一般不会出现很多数落在同一个桶中的情况。为了得到输出结果，我们先对每个桶中的数进行排序，然后遍历每个桶，按照次序把每个桶中的元素列出来即可。<br>假设输入是一个包含n个元素的数组A，且每个元素A[i]满足0≤A[i]＜1.此外，算法还需要一个临时数组B[0..n-1]来存放链表(即桶),并假设存在一种用于维护这些链表的机制。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BUCKET-SORT(A)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n = A.length</span><br><span class="line"><span class="built_in">let</span> B[0..n-1] be a new array</span><br><span class="line"><span class="keyword">for</span> i = 0 to n - 1</span><br><span class="line">        make B[i] an empty list</span><br><span class="line"><span class="keyword">for</span> i = 1 to n</span><br><span class="line">        insert A[i] into list B[⌊nA[i]⌋]</span><br><span class="line"><span class="keyword">for</span> i = 0 to n - 1</span><br><span class="line">        sort list B[i] with insertion sort</span><br><span class="line">concatenate the lists B[0],B[1],…,B[n-1] together <span class="keyword">in</span> order</span><br></pre></td></tr></table></figure>
+<p>图8-4显示了在一个包含10个元素的输入数组上的桶排序过程。<br><img src="/图8-4.png"></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年08月12日 13:20</p>
+        <p>原始链接： <a class="post-url" href="/2018/08/12/算法导论 第八章 线性时间排序/" title="《算法导论》第八章 线性时间排序">http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/</a></p>
+        <!--
+        <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
+        -->
+        <footer>
+            <a href="http://zydi.github.io">
+                <img src="/images/logo.png" alt="D">
+                D
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        喵喵喵~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/&title=《《算法导论》第八章 线性时间排序》 — D&pic=/images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/&title=《《算法导论》第八章 线性时间排序》 — D&source=《算法导论》第八章 线性时间排序在排序的最终结果中，各元素的次序依赖于它们之间的比较。这类排序算法称为比较排序。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《《算法导论》第八章 线性时间排序》 — D&url=http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/&via=http://zydi.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zydi.github.io/2018/08/12/算法导论 第八章 线性时间排序/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/算法导论/" class="color5">算法导论</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-1-排序算法的下界"><span class="post-toc-text">8.1 排序算法的下界</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#决策树模型"><span class="post-toc-text">决策树模型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最坏情况的下界"><span class="post-toc-text">最坏情况的下界</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-2-计数排序"><span class="post-toc-text">8.2 计数排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-3-基数排序"><span class="post-toc-text">8.3 基数排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-4-桶排序"><span class="post-toc-text">8.4 桶排序</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/25/test/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          tset
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/07/28/DL_04CNN_week1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NG深度学习笔记 01 第一周</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by D
+      &copy; 2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://zydi.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/tset/" style="font-size: 10px;">tset</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/tset/" style="font-size: 10px;">tset</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
