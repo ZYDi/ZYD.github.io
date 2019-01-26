@@ -16,16 +16,16 @@
 <meta property="og:site_name" content="D">
 <meta property="og:description" content="《算法导论》第六章 堆排序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://zydi.github.io/图6-1.png">
-<meta property="og:image" content="http://zydi.github.io/图6-2.png">
-<meta property="og:image" content="http://zydi.github.io/图6-3.png">
-<meta property="og:image" content="http://zydi.github.io/图6-4.png">
-<meta property="og:image" content="http://zydi.github.io/图6-5.png">
-<meta property="og:updated_time" content="2018-08-05T07:43:07.289Z">
+<meta property="og:image" content="http://zydi.github.io/算法导论%20第六章%20堆排序/图6-1.png">
+<meta property="og:image" content="http://zydi.github.io/算法导论%20第六章%20堆排序/图6-2.png">
+<meta property="og:image" content="http://zydi.github.io/算法导论%20第六章%20堆排序/图6-3.png">
+<meta property="og:image" content="http://zydi.github.io/算法导论%20第六章%20堆排序/图6-4.png">
+<meta property="og:image" content="http://zydi.github.io/算法导论%20第六章%20堆排序/图6-5.png">
+<meta property="og:updated_time" content="2019-01-26T15:03:16.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《算法导论》第六章 堆排序">
 <meta name="twitter:description" content="《算法导论》第六章 堆排序">
-<meta name="twitter:image" content="http://zydi.github.io/图6-1.png">
+<meta name="twitter:image" content="http://zydi.github.io/算法导论%20第六章%20堆排序/图6-1.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -147,30 +147,30 @@
 <p>2.树的根结点是A[1]<br>给定一个结点的下标i，则父结点、左孩子和右孩子的下标：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PARENT(i)</span><br><span class="line"></span><br><span class="line"> <span class="built_in">return</span> ⌊i/2⌋</span><br></pre></td></tr></table></figure></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LEFT(i)</span><br><span class="line"></span><br><span class="line"> <span class="built_in">return</span> 2i</span><br></pre></td></tr></table></figure>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RIGHT(i)</span><br><span class="line"></span><br><span class="line"> <span class="built_in">return</span> 2i+1</span><br></pre></td></tr></table></figure>
-<p><img src="/图6-1.png"></p>
+<p><img src="/算法导论 第六章 堆排序/图6-1.png"></p>
 <p>3.<b>最大堆</b>:A[PARENT(i)]≥A[i]（某个结点的值至多与其父结点一样大）<br><b>最小堆</b>:A[PARENT(i)]≤A[i]（最小元素存放在根结点中）</p>
 <p>4.<b>高度</b>：<br>含有n个元素的堆的高度为⌊lgn⌋<br>堆结构上的一些基本操作的运行时间至多是与树的高度成正比，为O(lgn)。</p>
 <p>5.当用数组表示存储n个元素的堆时，叶结点下标分别是⌊n/2⌋+1，⌊n/2⌋+2，…，n。</p>
 <h3 id="维护堆的性质"><a href="#维护堆的性质" class="headerlink" title="维护堆的性质"></a>维护堆的性质</h3><p>MAX-HEAPIFY:通过让A[i]的值在最大堆中“逐级下降”，从而使得以下标i为根结点的子树重新遵循最大堆的性质，其时间复杂度为O(lgn)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：数组A，下标i</span><br><span class="line">假设：根结点为LEFT(i)和RIGHT(i)的二叉树都是最大堆</span><br><span class="line"></span><br><span class="line">MAX-HEAPIFY(A,i)</span><br></pre></td></tr></table></figure></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">l = LEFT(i)</span><br><span class="line">r = RIGHT(i)</span><br><span class="line"><span class="keyword">if</span> l ≤ A.heap-size and A[l] &gt; A[i]</span><br><span class="line">	largest = l</span><br><span class="line"><span class="keyword">else</span> largest = i</span><br><span class="line"><span class="keyword">if</span> r ≤ A.heap-size and A[r] &gt; A[largest]</span><br><span class="line">	largest = r</span><br><span class="line"><span class="keyword">if</span> largest ≠ i</span><br><span class="line">	exchange A[i] with A[largest]</span><br><span class="line">	MAX-HEAPIFY(A,largest)</span><br></pre></td></tr></table></figure>
-<p><img src="/图6-2.png"></p>
+<p><img src="/算法导论 第六章 堆排序/图6-2.png"></p>
 <h3 id="建堆"><a href="#建堆" class="headerlink" title="建堆"></a>建堆</h3><p>BUILD-MAX-HEAP:从无序的输入数据数组中构造一个最大堆。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BUILD-MAX-HEAP(A)</span><br></pre></td></tr></table></figure></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A.heap-size = A.lengh</span><br><span class="line"><span class="keyword">for</span> i = ⌊A.lengh/2⌋ downto 1</span><br><span class="line">	MAX-HEAPIFY(A,i)</span><br></pre></td></tr></table></figure>
-<p><img src="/图6-3.png"></p>
+<p><img src="/算法导论 第六章 堆排序/图6-3.png"></p>
 <h3 id="堆排序算法"><a href="#堆排序算法" class="headerlink" title="堆排序算法"></a>堆排序算法</h3><p>HEAPSORT:对一个数组进行原址排序，其时间复杂度为O(nlgn)。<br>初始时候，堆排序算法利用BUILD-MAX-HEAP将输入数组A[1..n]建成最大堆，其中n=A.lengh。因为数组中的最大元素总在根结点A[1]中，通过把它与A[n]进行互换，我们可以让该元素放到正确的位置。这时候，如果我们从堆中去掉结点n（这一操作可以通过减少A.heap-size的值来实现），剩余的结点中，原来根的孩子结点仍然是最大堆，而新的根结点可能会违背最大堆的性质。为了维护最大堆的性质，我们要做的是调用MAX-HEAPIFY（A，1），从而在A[1..n-1]上构造一个新的最大堆。堆排序算法会不断重复这一过程，直到堆的大小从n-1降到2.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HEAPSORT(A)</span><br></pre></td></tr></table></figure></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BUILD-MAX-HEAP(A)</span><br><span class="line"><span class="keyword">for</span> i = A.lengh downto 2</span><br><span class="line">	exchange A[1] with A[i]</span><br><span class="line">	A.heap-size = A.heap-size - 1</span><br><span class="line">	MAX-HEAPIFY(A,1)</span><br></pre></td></tr></table></figure>
-<p><img src="/图6-4.png"></p>
+<p><img src="/算法导论 第六章 堆排序/图6-4.png"></p>
 <h3 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h3><p>1.<b>优先队列</b>是一种用来维护由一组元素构成的集合S的数据结构，其中的每一个元素都有一个相关的值，成为<b>关键字</b>。一个<b>最大优先队列</b>支持一下操作：<br>    INSERT(S,x):把元素x插入集合S中。这一操作等价于S=S∪{x}。<br>    MAXIMUM(S):返回S中具有最大键字的元素。<br>    EXTRACT-MAX(S):去掉并返回S中的具有最大键字的元素。<br>    INCREASE-KEY(S,x,k):将元素x的关键字增加到k，这里假设k的值不小于x的原关键字值。<br>相应地，最小优先队列支持的操作包括INSERT、MINIMUM、EXTRACT、EXTRACT-MIN和DECREASE-KEY。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HEAP-MAXIMUM(A)</span><br><span class="line"></span><br><span class="line"><span class="built_in">return</span> A[1]</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HEAP-EXTRACT-MAX(A)</span><br></pre></td></tr></table></figure>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> A.heap-size &lt; 1</span><br><span class="line">	error <span class="string">"heap underflow"</span></span><br><span class="line">max = A[1]</span><br><span class="line">A[1] = A[A.heap-size]</span><br><span class="line">A.heap-size = A.heap-size - 1</span><br><span class="line">MAZ-HEAPIFY(A,1)</span><br><span class="line"><span class="built_in">return</span> max</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HEAP-INCREASE-KEY(A,i,key)</span><br></pre></td></tr></table></figure>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> key &lt; A[i]</span><br><span class="line">	error <span class="string">"new key is smaller than key"</span></span><br><span class="line">A[i] = key</span><br><span class="line"><span class="keyword">while</span> i &gt; 1 and A[PARENT(i)] &lt; A[i]</span><br><span class="line">	exchange A[i] with A[PARENT(i)]</span><br><span class="line">	i = PARENT(i)</span><br></pre></td></tr></table></figure>
-<p><img src="/图6-5.png"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MAX-HEAP-INSERT(A,key)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/算法导论 第六章 堆排序/图6-5.png"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MAX-HEAP-INSERT(A,key)</span><br></pre></td></tr></table></figure></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A.heap-size = A.heap-size + 1</span><br><span class="line">A[A.heap-size] = -∞</span><br><span class="line">HEAP-INCREASE-KEY(A,A.heap-size,key)</span><br></pre></td></tr></table></figure>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年08月05日 15:43</p>
+        <p>最后更新： 2019年01月26日 23:03</p>
         <p>原始链接： <a class="post-url" href="/2018/07/22/算法导论 第六章 堆排序/" title="《算法导论》第六章 堆排序">http://zydi.github.io/2018/07/22/算法导论 第六章 堆排序/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
@@ -366,10 +366,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
+            <a class="category-link" href="/categories/LeetCode/">LeetCode</a><a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/tset/" style="font-size: 10px;">tset</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
+            <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -402,7 +402,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/tset/" style="font-size: 10px;">tset</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
+            <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 20px;">算法导论</a>
         </div>
     </div>
 </div>
