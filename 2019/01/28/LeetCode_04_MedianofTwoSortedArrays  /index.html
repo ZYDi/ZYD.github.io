@@ -3,27 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>NG深度学习笔记 01 第一周 | D</title>
+  <title>LeetCode_04_寻找两个有序数组的中位数 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="01.神经网络和深度学习第一周 深度学习概论">
-<meta name="keywords" content="深度学习">
+  <meta name="description" content="给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。">
+<meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NG深度学习笔记 01 第一周">
-<meta property="og:url" content="http://zydi.github.io/2018/07/28/DL_04CNN_week1/index.html">
+<meta property="og:title" content="LeetCode_04_寻找两个有序数组的中位数">
+<meta property="og:url" content="http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="01.神经网络和深度学习第一周 深度学习概论">
+<meta property="og:description" content="给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://zydi.github.io/2018/07/28/DL_04CNN_week1/图1-1.png">
-<meta property="og:image" content="http://zydi.github.io/2018/07/28/DL_04CNN_week1/图1-2.png">
-<meta property="og:image" content="http://zydi.github.io/2018/07/28/DL_04CNN_week1/图1-3.png">
-<meta property="og:updated_time" content="2019-01-27T04:14:44.210Z">
+<meta property="og:updated_time" content="2019-01-28T08:30:19.801Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NG深度学习笔记 01 第一周">
-<meta name="twitter:description" content="01.神经网络和深度学习第一周 深度学习概论">
-<meta name="twitter:image" content="http://zydi.github.io/2018/07/28/DL_04CNN_week1/图1-1.png">
+<meta name="twitter:title" content="LeetCode_04_寻找两个有序数组的中位数">
+<meta name="twitter:description" content="给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -103,14 +99,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-DL_04CNN_week1" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-LeetCode_04_MedianofTwoSortedArrays  " class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      NG深度学习笔记 01 第一周
+      LeetCode_04_寻找两个有序数组的中位数
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -118,12 +114,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/深度学习/">深度学习</a>
+                      <a href="/categories/LeetCode/">LeetCode</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2018-07-28
+          <i class="fa fa-calendar"></i>  2019-01-28
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -139,16 +135,22 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>01.神经网络和深度学习<br>第一周 深度学习概论</p>
+            <p>给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。</p>
+<p>请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。</p>
 <a id="more"></a>
-<h3 id="什么是神经网络？"><a href="#什么是神经网络？" class="headerlink" title="什么是神经网络？"></a>什么是神经网络？</h3><h4 id="单神经元网络"><a href="#单神经元网络" class="headerlink" title="单神经元网络"></a>单神经元网络</h4><p><img src="/2018/07/28/DL_04CNN_week1/图1-1.png"><br>我们把房屋的面积作为神经网络的输入(我们称之为x)，通过一个节点(一个小圆圈)，最终我们输出了价格(我们用y表示)。这个小圆圈就是一个单独的神经元。<br>从趋近于零开始，然后变成一条直线。这个函数被称作<b>ReLU</b>激活函数，它的全称是<b>Rectified Linear Unit</b>。rectify可以理解成max(0,x)。</p>
-<h4 id="多神经元网络"><a href="#多神经元网络" class="headerlink" title="多神经元网络"></a>多神经元网络</h4><p><img src="/2018/07/28/DL_04CNN_week1/图1-2.png"><br>在图上每一个画的小圆圈都可以是 ReLU 的一部分。在这个情景里，家庭人口、步行化程度以及学校的质量都能帮助你预测房屋的价格。以此为例，𝑥 是所有的这四个输入，𝑦 是你尝试预测的价格，把这些单个的神经元叠加在一起，我们就有了一个稍微大一点的神经网络。</p>
-<h4 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h4><p><img src="/2018/07/28/DL_04CNN_week1/图1-3.png"><br>神经网络给予了足够多的关于𝑥和𝑦的数据，给予了足够的训练样本有关𝑥和𝑦。神经网络非常擅长计算从𝑥到𝑦的精准映射函数。</p>
+<p>你可以假设 nums1 和 nums2 不会同时为空。</p>
+<p>示例 1:</p>
+<p>nums1 = [1, 3]<br>nums2 = [2]</p>
+<p>则中位数是 2.0<br>示例 2:</p>
+<p>nums1 = [1, 2]<br>nums2 = [3, 4]</p>
+<p>则中位数是 (2 + 3)/2 = 2.5<br>示例：</p>
+<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public double findMedianSortedArrays(int[] A, int[] B) &#123;</span><br><span class="line">        int m = A.length;</span><br><span class="line">        int n = B.length;</span><br><span class="line">        <span class="keyword">if</span> (m &gt; n) &#123; // to ensure m&lt;=n</span><br><span class="line">            int[] temp = A; A = B; B = temp;</span><br><span class="line">            int tmp = m; m = n; n = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        int iMin = 0, iMax = m, halfLen = (m + n + 1) / 2;</span><br><span class="line">        <span class="keyword">while</span> (iMin &lt;= iMax) &#123;</span><br><span class="line">            int i = (iMin + iMax) / 2;</span><br><span class="line">            int j = halfLen - i;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; iMax &amp;&amp; B[j-1] &gt; A[i])&#123;</span><br><span class="line">                iMin = i + 1; // i is too small</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i &gt; iMin &amp;&amp; A[i-1] &gt; B[j]) &#123;</span><br><span class="line">                iMax = i - 1; // i is too big</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123; // i is perfect</span><br><span class="line">                int maxLeft = 0;</span><br><span class="line">                <span class="keyword">if</span> (i == 0) &#123; maxLeft = B[j-1]; &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (j == 0) &#123; maxLeft = A[i-1]; &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123; maxLeft = Math.max(A[i-1], B[j-1]); &#125;</span><br><span class="line">                <span class="keyword">if</span> ( (m + n) % 2 == 1 ) &#123; <span class="built_in">return</span> maxLeft; &#125;</span><br><span class="line"></span><br><span class="line">                int minRight = 0;</span><br><span class="line">                <span class="keyword">if</span> (i == m) &#123; minRight = B[j]; &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (j == n) &#123; minRight = A[i]; &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123; minRight = Math.min(B[j], A[i]); &#125;</span><br><span class="line"></span><br><span class="line">                <span class="built_in">return</span> (maxLeft + minRight) / 2.0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> 0.0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年01月27日 12:14</p>
-        <p>原始链接： <a class="post-url" href="/2018/07/28/DL_04CNN_week1/" title="NG深度学习笔记 01 第一周">http://zydi.github.io/2018/07/28/DL_04CNN_week1/</a></p>
+        <p>最后更新： 2019年01月28日 16:30</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /" title="LeetCode_04_寻找两个有序数组的中位数">http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -208,7 +210,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2018/07/28/DL_04CNN_week1/&title=《NG深度学习笔记 01 第一周》 — D&pic=/images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /&title=《LeetCode_04_寻找两个有序数组的中位数》 — D&pic=/images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -218,22 +220,23 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zydi.github.io/2018/07/28/DL_04CNN_week1/&title=《NG深度学习笔记 01 第一周》 — D&source=01.神经网络和深度学习第一周 深度学习概论" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /&title=《LeetCode_04_寻找两个有序数组的中位数》 — D&source=给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
+请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zydi.github.io/2018/07/28/DL_04CNN_week1/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NG深度学习笔记 01 第一周》 — D&url=http://zydi.github.io/2018/07/28/DL_04CNN_week1/&via=http://zydi.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_04_寻找两个有序数组的中位数》 — D&url=http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /&via=http://zydi.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zydi.github.io/2018/07/28/DL_04CNN_week1/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -243,7 +246,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zydi.github.io/2018/07/28/DL_04CNN_week1/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zydi.github.io/2019/01/28/LeetCode_04_MedianofTwoSortedArrays  /" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -255,7 +258,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/深度学习/" class="color5">深度学习</a>
+    <a href="/tags/LeetCode/" class="color4">LeetCode</a>
       
   </li>
 
@@ -266,28 +269,22 @@
 </article>
 
 
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是神经网络？"><span class="post-toc-text">什么是神经网络？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单神经元网络"><span class="post-toc-text">单神经元网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多神经元网络"><span class="post-toc-text">多神经元网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#神经网络"><span class="post-toc-text">神经网络</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-    
 
 <nav id="article-nav">
   
-    <a href="/2018/08/12/算法导论 第八章 线性时间排序/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/28/LeetCode_04_MedianofTwoSortedArrays/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          《算法导论》第八章 线性时间排序
+          LeetCode_04_寻找两个有序数组的中位数
         
       </span>
     </a>
   
   
-    <a href="/2018/07/28/算法导论 第七章 快速排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">《算法导论》第七章 快速排序</span>
+    <a href="/2019/01/27/LeetCode_01_TwoSum/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">LeetCode_01_两数之和</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -435,5 +432,4 @@
   </script>
 
   </div>
-</body>
-</html>
+</bo
