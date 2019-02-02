@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>LeetCode_15_三数之和 | D</title>
+  <title>LeetCode_16_最接近的三数之和 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。">
+  <meta name="description" content="给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_15_三数之和">
-<meta property="og:url" content="http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/index.html">
+<meta property="og:title" content="LeetCode_16_最接近的三数之和">
+<meta property="og:url" content="http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。">
+<meta property="og:description" content="给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-01T10:11:52.406Z">
+<meta property="og:updated_time" content="2019-02-02T03:14:14.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_15_三数之和">
-<meta name="twitter:description" content="给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。">
+<meta name="twitter:title" content="LeetCode_16_最接近的三数之和">
+<meta name="twitter:description" content="给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -99,14 +99,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-LeetCode_15_ 3Sum" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-LeetCode_16_ 3SumClosest" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      LeetCode_15_三数之和
+      LeetCode_16_最接近的三数之和
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -119,7 +119,7 @@
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-02-01
+          <i class="fa fa-calendar"></i>  2019-02-02
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -135,16 +135,15 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。</p>
+            <p>给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>
 <a id="more"></a>
-<p>注意：答案中不可以包含重复的三元组。</p>
-<p>例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，</p>
-<p>满足要求的三元组集合为：<br>[<br>  [-1, 0, 1],<br>  [-1, -1, 2]<br>]<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def threeSum(self, nums):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        list_ret = []</span><br><span class="line">        d = &#123;&#125; </span><br><span class="line">        num = len(nums)</span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(num): </span><br><span class="line">            <span class="keyword">if</span> i == 0 or nums[i]&gt;nums[i-1]: <span class="comment">##避免出现重复三元组 </span></span><br><span class="line">                l = i+1</span><br><span class="line">                r = num-1            </span><br><span class="line">                <span class="keyword">while</span>(l &lt; r):</span><br><span class="line">                    s = nums[i] + nums[l] + nums[r]</span><br><span class="line">                    <span class="keyword">if</span> s == 0:                        </span><br><span class="line">                        col = [nums[i],nums[l],nums[r]]</span><br><span class="line">                        max_e = max(col)</span><br><span class="line">                        min_e = min(col)   </span><br><span class="line">                        <span class="keyword">if</span>((max_e,min_e)  not <span class="keyword">in</span> d):</span><br><span class="line">                            list_ret.append(col)                     </span><br><span class="line">                            d[(max_e,min_e)] = 1 <span class="comment">###字典用来最终避免三元组重复</span></span><br><span class="line">                        r -= 1</span><br><span class="line">                        l += 1                   </span><br><span class="line">                    <span class="keyword">elif</span> s &gt; 0:</span><br><span class="line">                        r -= 1</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        l += 1</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> list_ret</span><br></pre></td></tr></table></figure></p>
+<p>例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.</p>
+<p>与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def threeSumClosest(self, nums, target):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        res = sum(nums[:3])</span><br><span class="line">        m = abs(res - target)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            l = i+1</span><br><span class="line">            r = len(nums)-1</span><br><span class="line">            <span class="keyword">while</span> l &lt; r:</span><br><span class="line">                temp = nums[i] + nums[l] +nums[r]</span><br><span class="line">                <span class="keyword">if</span> abs(res - target) &gt; abs(temp-target):</span><br><span class="line">                    res = temp</span><br><span class="line">                <span class="keyword">elif</span> target &lt; temp:</span><br><span class="line">                    r -=1</span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                    l +=1</span><br><span class="line">        <span class="built_in">return</span> res</span><br></pre></td></tr></table></figure></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月01日 18:11</p>
-        <p>原始链接： <a class="post-url" href="/2019/02/01/LeetCode_15_ 3Sum/" title="LeetCode_15_三数之和">http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/</a></p>
+        <p>最后更新： 2019年02月02日 11:14</p>
+        <p>原始链接： <a class="post-url" href="/2019/02/02/LeetCode_16_ 3SumClosest/" title="LeetCode_16_最接近的三数之和">http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -204,7 +203,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/&title=《LeetCode_15_三数之和》 — D&pic=/images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/&title=《LeetCode_16_最接近的三数之和》 — D&pic=/images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -214,22 +213,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/&title=《LeetCode_15_三数之和》 — D&source=给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/&title=《LeetCode_16_最接近的三数之和》 — D&source=给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的..." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_15_三数之和》 — D&url=http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/&via=http://zydi.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_16_最接近的三数之和》 — D&url=http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/&via=http://zydi.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -239,7 +238,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zydi.github.io/2019/02/01/LeetCode_15_ 3Sum/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zydi.github.io/2019/02/02/LeetCode_16_ 3SumClosest/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -265,19 +264,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/02/02/LeetCode_16_ 3SumClosest/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          LeetCode_16_最接近的三数之和
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/01/31/LeetCode_14_ LongestCommonPrefix/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">LeetCode_14_最长公共前缀</span>
+    <a href="/2019/02/01/LeetCode_15_ 3Sum/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">LeetCode_15_三数之和</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
