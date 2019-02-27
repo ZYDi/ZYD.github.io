@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="D">
 <meta property="og:description" content="给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-27T04:39:34.817Z">
+<meta property="og:updated_time" content="2019-02-27T12:38:47.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_01_两数之和">
 <meta name="twitter:description" content="给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。">
@@ -147,7 +147,7 @@
 <h3 id="求差值-1028-ms"><a href="#求差值-1028-ms" class="headerlink" title="求差值(1028 ms)"></a>求差值(1028 ms)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def twoSum(self, nums, target):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span>       </span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> range(n):</span><br><span class="line">            b = target-nums[x]</span><br><span class="line">            <span class="keyword">if</span> b <span class="keyword">in</span> nums:</span><br><span class="line">                y = nums.index(b)</span><br><span class="line">                <span class="keyword">if</span> y!=x:</span><br><span class="line">                    <span class="built_in">return</span> x,y</span><br></pre></td></tr></table></figure>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年01月27日 12:39</p>
+        <p>最后更新： 2019年02月27日 20:38</p>
         <p>原始链接： <a class="post-url" href="/2019/01/27/LeetCode_01_TwoSum/" title="LeetCode_01_两数之和">http://zydi.github.io/2019/01/27/LeetCode_01_TwoSum/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
@@ -208,7 +208,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2019/01/27/LeetCode_01_TwoSum/&title=《LeetCode_01_两数之和》 — D&pic=/images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2019/01/27/LeetCode_01_TwoSum/&title=《LeetCode_01_两数之和》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
