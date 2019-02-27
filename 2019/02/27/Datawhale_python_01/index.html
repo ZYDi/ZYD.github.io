@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Datawhale-python基础-01 | D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="D">
+  
+  <meta name="description" content="环境搭建、python基础、python数值基本知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Datawhale-python基础-01">
+<meta property="og:url" content="http://zydi.github.io/2019/02/27/Datawhale_python_01/index.html">
+<meta property="og:site_name" content="D">
+<meta property="og:description" content="环境搭建、python基础、python数值基本知识。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-27T12:22:49.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Datawhale-python基础-01">
+<meta name="twitter:description" content="环境搭建、python基础、python数值基本知识。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet" type="text/css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">D</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        D
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        宇宙无敌大帅比！
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Datawhale_python_01" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Datawhale-python基础-01
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-02-27
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>环境搭建、python基础、python数值基本知识。</p>
+<a id="more"></a>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="anaconda环境配置"><a href="#anaconda环境配置" class="headerlink" title="anaconda环境配置"></a>anaconda环境配置</h3><h3 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h3><h2 id="python初体验"><a href="#python初体验" class="headerlink" title="python初体验"></a>python初体验</h2><h3 id="print-and-input"><a href="#print-and-input" class="headerlink" title="print and input"></a>print and input</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'Python基础'</span>)</span><br></pre></td></tr></table></figure>
+<p> 输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print基础</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str = input(<span class="string">"请输入："</span>);</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"输入的内容是："</span>, str)</span><br></pre></td></tr></table></figure>
+<p> 输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">请输入：python</span><br><span class="line">输入的内容是：python</span><br></pre></td></tr></table></figure></p>
+<h2 id="python基础讲解"><a href="#python基础讲解" class="headerlink" title="python基础讲解"></a>python基础讲解</h2><h3 id="python变量特性-命名规则"><a href="#python变量特性-命名规则" class="headerlink" title="python变量特性+命名规则"></a>python变量特性+命名规则</h3><h3 id="注释方法"><a href="#注释方法" class="headerlink" title="注释方法"></a>注释方法</h3><h4 id="单行注释-“-”"><a href="#单行注释-“-”" class="headerlink" title="单行注释 “#”"></a>单行注释 “#”</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 单行注释</span><br><span class="line">print(&quot;Hello Python&quot;)</span><br></pre></td></tr></table></figure>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello Python</span><br></pre></td></tr></table></figure></p>
+<h4 id="多行注释-“’’’”“””””"><a href="#多行注释-“’’’”“””””" class="headerlink" title="多行注释 “’’’”“””””"></a>多行注释 “’’’”“””””</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&apos;&apos;&apos;</span><br><span class="line">多行注释1</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">多行注释2</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">print(&quot;Hello Python&quot;)</span><br></pre></td></tr></table></figure>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello Python</span><br></pre></td></tr></table></figure></p>
+<h3 id="python中“-”作用"><a href="#python中“-”作用" class="headerlink" title="python中“:”作用"></a>python中“:”作用</h3><h3 id="学会使用dir-和help"><a href="#学会使用dir-和help" class="headerlink" title="学会使用dir()和help()"></a>学会使用dir()和help()</h3><h3 id="import使用（from…import）"><a href="#import使用（from…import）" class="headerlink" title="import使用（from…import）"></a>import使用（from…import）</h3><p>在Pyhton中import用来导入相应的模块。<br>将整个模块(somemodule)导入，格式为： import somemodule<br>从某个模块中导入某个函数,格式为： from somemodule import somefunction<br>从某个模块中导入多个函数,格式为： from somemodule import firstfunc, secondfunc, thirdfunc<br>将某个模块中的全部函数导入，格式为： from somemodule import *</p>
+<h3 id="pep8介绍"><a href="#pep8介绍" class="headerlink" title="pep8介绍"></a>pep8介绍</h3><h4 id="代码编排"><a href="#代码编排" class="headerlink" title="代码编排"></a>代码编排</h4><p>1.缩进。4个空格的缩进（编辑器都可以完成此功能），不使用Tap，更不能混合使用Tap和空格。<br>2.每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。<br>3.类和top-level函数定义之间空两行；类中的方法定义之间空一行；函数内逻辑无关段落之间空一行；其他地方尽量不要再空行。</p>
+<h4 id="文档编排"><a href="#文档编排" class="headerlink" title="文档编排"></a>文档编排</h4><p>1.模块内容的顺序：模块说明和docstring—import—globals&amp;constants—其他定义。其中import部分，又按标准、三方和自己编写顺序依次排放，之间空一行。<br>2.不要在一句import中多个库，比如import os, sys不推荐。<br>3.如果采用from XX import XX引用库，可以省略‘module.’，都是可能出现命名冲突，这时就要采用import XX。</p>
+<h4 id="空格的使用"><a href="#空格的使用" class="headerlink" title="空格的使用"></a>空格的使用</h4><p>总体原则，避免不必要的空格。<br>1.各种右括号前不要加空格。<br>2.逗号、冒号、分号前不要加空格。<br>3.函数的左括号前不要加空格。如Func(1)。<br>4.序列的左括号前不要加空格。如list[2]。<br>5.操作符左右各加一个空格，不要为了对齐增加空格。<br>6.函数默认参数使用的赋值符左右省略空格。<br>7.不要将多句语句写在同一行，尽管使用‘；’允许。<br>8.if/for/while语句中，即使执行语句只有一句，也必须另起一行。</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>总体原则，错误的注释不如没有注释。所以当一段代码发生变化时，第一件事就是要修改注释！注释必须使用英文，最好是完整的句子，首字母大写，句后要有结束符，结束符后跟两个空格，开始下一句。如果是短语，可以省略结束符。<br>1.块注释，在一段代码前增加的注释。在‘#’后加一空格。段落之间以只有‘#’的行间隔。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Description : Module config.</span><br><span class="line"># </span><br><span class="line"># Input : None</span><br><span class="line">#</span><br><span class="line"># Output : None</span><br></pre></td></tr></table></figure></p>
+<p>2.行注释，在一句代码后加注释。比如：(但是这种方式尽量少使用)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = x + 1       # Increment x</span><br></pre></td></tr></table></figure></p>
+<p>3.避免无谓的注释。</p>
+<h4 id="文档描述"><a href="#文档描述" class="headerlink" title="文档描述"></a>文档描述</h4><p>1.为所有的共有模块、函数、类、方法写docstrings；非共有的没有必要，但是可以写注释（在def的下一行）。<br>2.如果docstring要换行，参考如下例子,详见PEP 257<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">Return a foobang</span><br><span class="line">Optional plotz says to frobnicate the bizbaz first.</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure></p>
+<h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><p>总体原则，新编代码必须按下面命名风格进行，现有库的编码尽量保持风格。<br>1.尽量单独使用小写字母‘l’，大写字母‘O’等容易混淆的字母。<br>2.模块命名尽量短小，使用全部小写的方式，可以使用下划线。<br>3.包命名尽量短小，使用全部小写的方式，不可以使用下划线。<br>4.类的命名使用CapWords的方式，模块内部使用的类采用_CapWords的方式。<br>5.异常命名使用CapWords+Error后缀的方式。<br>6.全局变量尽量只在模块内有效，类似C语言中的static。实现方法有两种，一是all机制;二是前缀一个下划线。<br>7.函数命名使用全部小写的方式，可以使用下划线。<br>8.常量命名使用全部大写的方式，可以使用下划线。<br>9.类的属性（方法和变量）命名使用全部小写的方式，可以使用下划线。<br>10.类的属性有3种作用域public、non-public和subclass API，可以理解成C++中的public、private、protected，non-public属性前，前缀一条下划线。<br>11.类的属性若与关键字名字冲突，后缀一下划线，尽量不要使用缩略等其他方式。<br>12.为避免与子类属性命名冲突，在类的一些属性前，前缀两条下划线。比如：类Foo中声明<strong>a,访问时，只能通过Foo._Foo</strong>a，避免歧义。如果子类也叫Foo，那就无能为力了。<br>13.类的方法第一个参数必须是self，而静态方法第一个参数必须是cls。</p>
+<h2 id="python数值基本知识"><a href="#python数值基本知识" class="headerlink" title="python数值基本知识"></a>python数值基本知识</h2><h3 id="python中数据类型"><a href="#python中数据类型" class="headerlink" title="python中数据类型"></a>python中数据类型</h3><p>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。<br>在 Python 中，变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。</p>
+<h4 id="多个变量赋值"><a href="#多个变量赋值" class="headerlink" title="多个变量赋值"></a>多个变量赋值</h4><p>Python允许你同时为多个变量赋值。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = b = c = 1</span><br></pre></td></tr></table></figure></p>
+<p>以上实例，创建一个整型对象，值为1，从后向前赋值，三个变量被赋予相同的数值。<br>您也可以为多个对象指定多个变量。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = 1, 2, &quot;runoob&quot;</span><br></pre></td></tr></table></figure></p>
+<p>以上实例，两个整型对象 1 和 2 的分配给变量 a 和 b，字符串对象”runoob” 分配给变量 c。</p>
+<h4 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h4><p>Python3 中有六个标准的数据类型：<br>· Number（数字）<br>· String（字符串）<br>· List（列表）<br>· Tuple（元组）<br>· Set（集合）<br>· Dictionary（字典）<br>Python3 的六个标准数据类型中：<br>· 不可变数据（3个）：Number（数字）、String（字符串）、Tuple（元组）；<br>· 可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。<br><a href="http://www.runoob.com/python3/python3-data-type.html" target="_blank" rel="noopener">&gt;&gt;&gt;详情</a></p>
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年02月27日 20:22</p>
+        <p>原始链接： <a class="post-url" href="/2019/02/27/Datawhale_python_01/" title="Datawhale-python基础-01">http://zydi.github.io/2019/02/27/Datawhale_python_01/</a></p>
+        <!--
+        <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
+        -->
+        <footer>
+            <a href="http://zydi.github.io">
+                <img src="/images/logo.png" alt="D">
+                D
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        喵喵喵~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zydi.github.io/2019/02/27/Datawhale_python_01/&title=《Datawhale-python基础-01》 — D&pic=http://zydi.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zydi.github.io/2019/02/27/Datawhale_python_01/&title=《Datawhale-python基础-01》 — D&source=环境搭建、python基础、python数值基本知识。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zydi.github.io/2019/02/27/Datawhale_python_01/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Datawhale-python基础-01》 — D&url=http://zydi.github.io/2019/02/27/Datawhale_python_01/&via=http://zydi.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zydi.github.io/2019/02/27/Datawhale_python_01/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zydi.github.io/2019/02/27/Datawhale_python_01/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境搭建"><span class="post-toc-text">环境搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#anaconda环境配置"><span class="post-toc-text">anaconda环境配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释器"><span class="post-toc-text">解释器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#python初体验"><span class="post-toc-text">python初体验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#print-and-input"><span class="post-toc-text">print and input</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#python基础讲解"><span class="post-toc-text">python基础讲解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#python变量特性-命名规则"><span class="post-toc-text">python变量特性+命名规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释方法"><span class="post-toc-text">注释方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单行注释-“-”"><span class="post-toc-text">单行注释 “#”</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多行注释-“’’’”“””””"><span class="post-toc-text">多行注释 “’’’”“””””</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#python中“-”作用"><span class="post-toc-text">python中“:”作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#学会使用dir-和help"><span class="post-toc-text">学会使用dir()和help()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#import使用（from…import）"><span class="post-toc-text">import使用（from…import）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pep8介绍"><span class="post-toc-text">pep8介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码编排"><span class="post-toc-text">代码编排</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文档编排"><span class="post-toc-text">文档编排</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#空格的使用"><span class="post-toc-text">空格的使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注释"><span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文档描述"><span class="post-toc-text">文档描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#命名规范"><span class="post-toc-text">命名规范</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#python数值基本知识"><span class="post-toc-text">python数值基本知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#python中数据类型"><span class="post-toc-text">python中数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多个变量赋值"><span class="post-toc-text">多个变量赋值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标准数据类型"><span class="post-toc-text">标准数据类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#算术运算符"><span class="post-toc-text">算术运算符</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/02/LeetCode_16_ 3SumClosest/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">LeetCode_16_最接近的三数之和</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by D
+      &copy; 2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://zydi.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/LeetCode/">LeetCode</a><a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
