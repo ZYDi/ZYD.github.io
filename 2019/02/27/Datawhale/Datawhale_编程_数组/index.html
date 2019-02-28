@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Datawhale-编程-数组 | D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="D">
+  
+  <meta name="description" content="数组">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Datawhale-编程-数组">
+<meta property="og:url" content="http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/index.html">
+<meta property="og:site_name" content="D">
+<meta property="og:description" content="数组">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-28T10:51:35.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Datawhale-编程-数组">
+<meta name="twitter:description" content="数组">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet" type="text/css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">D</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        D
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        宇宙无敌大帅比！
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Datawhale/Datawhale_编程_数组" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Datawhale-编程-数组
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/数据结构Datawhale/">数据结构 Datawhale</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-02-27
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>数组</p>
+<a id="more"></a>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="实现一个支持动态扩容的数组"><a href="#实现一个支持动态扩容的数组" class="headerlink" title="实现一个支持动态扩容的数组"></a>实现一个支持动态扩容的数组</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;   </span><br><span class="line">		<span class="keyword">int</span> incre=<span class="number">2</span>; <span class="comment">//容量增加量</span></span><br><span class="line">		<span class="keyword">int</span>[] a=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span>[] b=<span class="keyword">new</span> <span class="keyword">int</span>[a.length+incre];<span class="comment">//新数组</span></span><br><span class="line">		System.arraycopy(a, <span class="number">0</span>, b, <span class="number">0</span>, a.length);<span class="comment">//将a数组内容复制新数组b</span></span><br><span class="line">	    b[<span class="number">4</span>]=<span class="number">5</span>;<span class="comment">//b数组新增元素</span></span><br><span class="line">	    b[<span class="number">5</span>]=<span class="number">6</span>;</span><br><span class="line">	    a=b;<span class="comment">//改变引用</span></span><br><span class="line">	    System.out.println(<span class="string">"扩容后数组a容量为为："</span>+a.length+<span class="string">"  数组a内容："</span>);</span><br><span class="line">	    <span class="keyword">for</span>(<span class="keyword">int</span> i:a)</span><br><span class="line">	    	System.out.print(i+<span class="string">"  "</span>);    </span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现一个大小固定的有序数组，支持动态增删改操作"><a href="#实现一个大小固定的有序数组，支持动态增删改操作" class="headerlink" title="实现一个大小固定的有序数组，支持动态增删改操作"></a>实现一个大小固定的有序数组，支持动态增删改操作</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找数组中指定元素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt; count)</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> array[index];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//向数组中插入元素，如果数组已满，则扩容</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt; count)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	<span class="keyword">if</span>(count == size) &#123;</span><br><span class="line">		arrayExpansion(size * <span class="number">2</span>);</span><br><span class="line">		System.out.println(<span class="string">"动态扩容..."</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = count - <span class="number">1</span>; i &gt; index; --i) &#123;</span><br><span class="line">		array[i + <span class="number">1</span>] = array[i];</span><br><span class="line">	&#125;</span><br><span class="line">	array[index] = value;</span><br><span class="line">	++count;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除元素，当数组中元素数量小于一定程度的时候，则进行缩容</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">delete</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt; count)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = index + <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">		array[i - <span class="number">1</span>] = array[i];</span><br><span class="line">	&#125;</span><br><span class="line">	--count;</span><br><span class="line">	<span class="comment">//缩容</span></span><br><span class="line">	<span class="keyword">if</span> (count == array.length / <span class="number">4</span> &amp;&amp; array.length / <span class="number">2</span> != <span class="number">0</span>) &#123;</span><br><span class="line">		arrayExpansion(array.length / <span class="number">2</span>);</span><br><span class="line">		System.out.println(<span class="string">"动态缩容..."</span>)；</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现两个有序数组合并为一个有序数组"><a href="#实现两个有序数组合并为一个有序数组" class="headerlink" title="实现两个有序数组合并为一个有序数组"></a>实现两个有序数组合并为一个有序数组</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] merge1(<span class="keyword">int</span>[] array1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] array2, <span class="keyword">int</span> n) &#123;</span><br><span class="line">	<span class="keyword">int</span>[] array3 = <span class="keyword">new</span> <span class="keyword">int</span>[m + n];</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">// 通过一个while循环来进行添加</span></span><br><span class="line">	<span class="keyword">while</span>(i &lt; m &amp;&amp; j &lt; n) &#123;</span><br><span class="line">		<span class="keyword">if</span>(array1[i] &lt; array2[j]) &#123;</span><br><span class="line">			<span class="comment">// 将array1的元素加入array3，下标各加一</span></span><br><span class="line">			array3[k++] = array1[i++];</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="comment">// 将array2的元素加入array3，下标各加一</span></span><br><span class="line">			array3[k++] = array2[j++];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果array1有剩余</span></span><br><span class="line">	<span class="keyword">if</span>(i != m) &#123;</span><br><span class="line">		<span class="keyword">while</span>(i &lt; m) &#123;</span><br><span class="line">			array3[k++] = array1[i++];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果array2有剩余</span></span><br><span class="line">	<span class="keyword">if</span> (j != n) &#123;</span><br><span class="line">		<span class="keyword">while</span>(j &lt; n) &#123;</span><br><span class="line">			array3[k++] = array2[j++];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> array3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<ol>
+<li><a href="https://blog.csdn.net/andyzhaojianhui/article/details/79094488" target="_blank" rel="noopener">https://blog.csdn.net/andyzhaojianhui/article/details/79094488</a></li>
+<li><a href="https://juejin.im/post/5c6b6d0d6fb9a049c30bce0e" target="_blank" rel="noopener">https://juejin.im/post/5c6b6d0d6fb9a049c30bce0e</a></li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年02月28日 18:51</p>
+        <p>原始链接： <a class="post-url" href="/2019/02/27/Datawhale/Datawhale_编程_数组/" title="Datawhale-编程-数组">http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/</a></p>
+        <!--
+        <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
+        -->
+        <footer>
+            <a href="http://zzyydd.com">
+                <img src="/images/logo.png" alt="D">
+                D
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        喵喵喵~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/&title=《Datawhale-编程-数组》 — D&pic=images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/&title=《Datawhale-编程-数组》 — D&source=数组" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Datawhale-编程-数组》 — D&url=http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/&via=http://zzyydd.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/02/27/Datawhale/Datawhale_编程_数组/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/数据结构/" class="color5">数据结构</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组"><span class="post-toc-text">数组</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个支持动态扩容的数组"><span class="post-toc-text">实现一个支持动态扩容的数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个大小固定的有序数组，支持动态增删改操作"><span class="post-toc-text">实现一个大小固定的有序数组，支持动态增删改操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现两个有序数组合并为一个有序数组"><span class="post-toc-text">实现两个有序数组合并为一个有序数组</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/02/27/Datawhale_python_01/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Datawhale-python基础-01
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/02/27/Datawhale/Datawhale_编程_01/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Datawhale-编程-链表</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by D
+      &copy; 2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://zzyydd.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/LeetCode/">LeetCode</a><a class="category-link" href="/categories/python基础/">python基础</a><a class="category-link" href="/categories/数据结构-Datawhale/">数据结构 Datawhale</a><a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
