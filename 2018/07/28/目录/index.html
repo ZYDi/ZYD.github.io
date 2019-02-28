@@ -3,23 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>LeetCode_05_最长回文子串 | D</title>
+  <title>Datawhale-编程-目录 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。">
-<meta name="keywords" content="LeetCode">
+  <meta name="description" content="数组 http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E6%95%B0%E7%BB%84/ 链表 http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E9%93%BE%E8%A1%A8/ Three Sum（求三数之和）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_05_最长回文子串">
-<meta property="og:url" content="http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/index.html">
+<meta property="og:title" content="Datawhale-编程-目录">
+<meta property="og:url" content="http://zzyydd.com/2018/07/28/目录/index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。">
+<meta property="og:description" content="数组 http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E6%95%B0%E7%BB%84/ 链表 http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E9%93%BE%E8%A1%A8/ Three Sum（求三数之和）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T12:39:24.713Z">
+<meta property="og:updated_time" content="2019-02-28T11:18:18.618Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_05_最长回文子串">
-<meta name="twitter:description" content="给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。">
+<meta name="twitter:title" content="Datawhale-编程-目录">
+<meta name="twitter:description" content="数组 http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E6%95%B0%E7%BB%84/ 链表 http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E9%93%BE%E8%A1%A8/ Three Sum（求三数之和）">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -99,27 +98,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-LeetCode_05_LongestPalindromicSubstring" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-目录" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      LeetCode_05_最长回文子串
+      Datawhale-编程-目录
     </h1>
     <div class="post-title-bar">
       <ul>
           
-              <li>
-                  <i class="fa fa-book"></i>
-                  
-                      <a href="/categories/LeetCode/">LeetCode</a>
-                  
-              </li>
-          
         <li>
-          <i class="fa fa-calendar"></i>  2019-01-29
+          <i class="fa fa-calendar"></i>  2018-07-28
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -135,17 +127,21 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。</p>
-<a id="more"></a>
-<p>示例 1：</p>
-<p>输入: “babad”<br>输出: “bab”<br>注意: “aba” 也是一个有效答案。<br>示例 2：</p>
-<p>输入: “cbbd”<br>输出: “bb”</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def longestPalindrome(self, s):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        <span class="comment"># 动态规划</span></span><br><span class="line">        str_length = len(s)</span><br><span class="line">        max_length = 0</span><br><span class="line">        start = 0</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(str_length):</span><br><span class="line">            <span class="keyword">if</span> i - max_length &gt;= 1 and s[i-max_length-1: i+1] == s[i-max_length-1: i+1][::-1]:</span><br><span class="line">                start = i - max_length - 1</span><br><span class="line">                max_length += 2</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">            <span class="keyword">if</span> i - max_length &gt;= 0 and s[i-max_length: i+1] == s[i-max_length: i+1][::-1]:</span><br><span class="line">                start = i - max_length</span><br><span class="line">                max_length += 1</span><br><span class="line">        <span class="built_in">return</span> s[start: start + max_length]</span><br></pre></td></tr></table></figure>
+            <a id="more"></a>
+<ol>
+<li>数组 <a href="http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E6%95%B0%E7%BB%84/">http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E6%95%B0%E7%BB%84/</a></li>
+<li>链表 <a href="http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E9%93%BE%E8%A1%A8/">http://zzyydd.com/2019/02/27/Datawhale/Datawhale_%E7%BC%96%E7%A8%8B_%E9%93%BE%E8%A1%A8/</a></li>
+<li>Three Sum（求三数之和）<a href="http://zzyydd.com/2019/02/01/LeetCode_15_%203Sum/">http://zzyydd.com/2019/02/01/LeetCode_15_%203Sum/</a></li>
+<li>Majority Element（求众数）</li>
+<li>Missing Positive（求缺失的第一个正数）</li>
+<li>Linked List Cycle I（环形链表）</li>
+<li>Merge k Sorted Lists（合并 k 个排序链表）</li>
+</ol>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月27日 20:39</p>
-        <p>原始链接： <a class="post-url" href="/2019/01/29/LeetCode_05_LongestPalindromicSubstring/" title="LeetCode_05_最长回文子串">http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/</a></p>
+        <p>最后更新： 2019年02月28日 19:18</p>
+        <p>原始链接： <a class="post-url" href="/2018/07/28/目录/" title="Datawhale-编程-目录">http://zzyydd.com/2018/07/28/目录/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -205,7 +201,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/&title=《LeetCode_05_最长回文子串》 — D&pic=images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2018/07/28/目录/&title=《Datawhale-编程-目录》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -215,22 +211,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/&title=《LeetCode_05_最长回文子串》 — D&source=给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2018/07/28/目录/&title=《Datawhale-编程-目录》 — D&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2018/07/28/目录/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_05_最长回文子串》 — D&url=http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/&via=http://zzyydd.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Datawhale-编程-目录》 — D&url=http://zzyydd.com/2018/07/28/目录/&via=http://zzyydd.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2018/07/28/目录/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -240,7 +236,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/01/29/LeetCode_05_LongestPalindromicSubstring/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2018/07/28/目录/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -249,13 +245,6 @@
         <ul class="article-footer-menu">
             
             
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/LeetCode/" class="color4">LeetCode</a>
-      
-  </li>
-
         </ul>
         
     </footer>
@@ -266,19 +255,19 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/01/30/LeetCode_08_Stringtointeger(atoi)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/28/DL_04CNN_week1/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          LeetCode_08_字符串转换整数 (atoi)
+          NG深度学习笔记 01 第一周
         
       </span>
     </a>
   
   
-    <a href="/2019/01/28/LeetCode_02_AddTwoNumbers/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">LeetCode_02_两数相加</span>
+    <a href="/2018/07/28/算法导论 第七章 快速排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">《算法导论》第七章 快速排序</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -342,7 +331,7 @@
             <a class="category-link" href="/categories/LeetCode/">LeetCode</a><a class="category-link" href="/categories/python基础/">python基础</a><a class="category-link" href="/categories/数据结构-Datawhale/">数据结构 Datawhale</a><a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -375,7 +364,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 15px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
         </div>
     </div>
 </div>

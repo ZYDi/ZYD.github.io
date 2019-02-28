@@ -3,27 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>NG深度学习笔记 01 第一周 | D</title>
+  <title>LeetCode_16_最接近的三数之和 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="01.神经网络和深度学习第一周 深度学习概论">
-<meta name="keywords" content="深度学习">
+  <meta name="description" content="给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。">
+<meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NG深度学习笔记 01 第一周">
-<meta property="og:url" content="http://zzyydd.com/2018/07/28/DL_04CNN_week1/index.html">
+<meta property="og:title" content="LeetCode_16_最接近的三数之和">
+<meta property="og:url" content="http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="01.神经网络和深度学习第一周 深度学习概论">
+<meta property="og:description" content="给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://zzyydd.com/2018/07/28/DL_04CNN_week1/图1-1.png">
-<meta property="og:image" content="http://zzyydd.com/2018/07/28/DL_04CNN_week1/图1-2.png">
-<meta property="og:image" content="http://zzyydd.com/2018/07/28/DL_04CNN_week1/图1-3.png">
-<meta property="og:updated_time" content="2019-02-27T12:38:43.908Z">
+<meta property="og:updated_time" content="2019-02-27T12:39:13.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NG深度学习笔记 01 第一周">
-<meta name="twitter:description" content="01.神经网络和深度学习第一周 深度学习概论">
-<meta name="twitter:image" content="http://zzyydd.com/2018/07/28/DL_04CNN_week1/图1-1.png">
+<meta name="twitter:title" content="LeetCode_16_最接近的三数之和">
+<meta name="twitter:description" content="给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -103,14 +99,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-DL_04CNN_week1" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-LeetCode/LeetCode_16_ 3SumClosest" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      NG深度学习笔记 01 第一周
+      LeetCode_16_最接近的三数之和
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -118,12 +114,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/深度学习/">深度学习</a>
+                      <a href="/categories/LeetCode/">LeetCode</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2018-07-28
+          <i class="fa fa-calendar"></i>  2019-02-02
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -139,16 +135,15 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>01.神经网络和深度学习<br>第一周 深度学习概论</p>
+            <p>给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>
 <a id="more"></a>
-<h3 id="什么是神经网络？"><a href="#什么是神经网络？" class="headerlink" title="什么是神经网络？"></a>什么是神经网络？</h3><h4 id="单神经元网络"><a href="#单神经元网络" class="headerlink" title="单神经元网络"></a>单神经元网络</h4><p><img src="/2018/07/28/DL_04CNN_week1/图1-1.png"><br>我们把房屋的面积作为神经网络的输入(我们称之为x)，通过一个节点(一个小圆圈)，最终我们输出了价格(我们用y表示)。这个小圆圈就是一个单独的神经元。<br>从趋近于零开始，然后变成一条直线。这个函数被称作<b>ReLU</b>激活函数，它的全称是<b>Rectified Linear Unit</b>。rectify可以理解成max(0,x)。</p>
-<h4 id="多神经元网络"><a href="#多神经元网络" class="headerlink" title="多神经元网络"></a>多神经元网络</h4><p><img src="/2018/07/28/DL_04CNN_week1/图1-2.png"><br>在图上每一个画的小圆圈都可以是 ReLU 的一部分。在这个情景里，家庭人口、步行化程度以及学校的质量都能帮助你预测房屋的价格。以此为例，𝑥 是所有的这四个输入，𝑦 是你尝试预测的价格，把这些单个的神经元叠加在一起，我们就有了一个稍微大一点的神经网络。</p>
-<h4 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h4><p><img src="/2018/07/28/DL_04CNN_week1/图1-3.png"><br>神经网络给予了足够多的关于𝑥和𝑦的数据，给予了足够的训练样本有关𝑥和𝑦。神经网络非常擅长计算从𝑥到𝑦的精准映射函数。</p>
+<p>例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.</p>
+<p>与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def threeSumClosest(self, nums, target):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        res = sum(nums[:3])</span><br><span class="line">        m = abs(res - target)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            l = i+1</span><br><span class="line">            r = len(nums)-1</span><br><span class="line">            <span class="keyword">while</span> l &lt; r:</span><br><span class="line">                temp = nums[i] + nums[l] +nums[r]</span><br><span class="line">                <span class="keyword">if</span> abs(res - target) &gt; abs(temp-target):</span><br><span class="line">                    res = temp</span><br><span class="line">                <span class="keyword">elif</span> target &lt; temp:</span><br><span class="line">                    r -=1</span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                    l +=1</span><br><span class="line">        <span class="built_in">return</span> res</span><br></pre></td></tr></table></figure></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月27日 20:38</p>
-        <p>原始链接： <a class="post-url" href="/2018/07/28/DL_04CNN_week1/" title="NG深度学习笔记 01 第一周">http://zzyydd.com/2018/07/28/DL_04CNN_week1/</a></p>
+        <p>最后更新： 2019年02月27日 20:39</p>
+        <p>原始链接： <a class="post-url" href="/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/" title="LeetCode_16_最接近的三数之和">http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -208,7 +203,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2018/07/28/DL_04CNN_week1/&title=《NG深度学习笔记 01 第一周》 — D&pic=images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/&title=《LeetCode_16_最接近的三数之和》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -218,22 +213,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2018/07/28/DL_04CNN_week1/&title=《NG深度学习笔记 01 第一周》 — D&source=01.神经网络和深度学习第一周 深度学习概论" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/&title=《LeetCode_16_最接近的三数之和》 — D&source=给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的..." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2018/07/28/DL_04CNN_week1/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NG深度学习笔记 01 第一周》 — D&url=http://zzyydd.com/2018/07/28/DL_04CNN_week1/&via=http://zzyydd.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_16_最接近的三数之和》 — D&url=http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/&via=http://zzyydd.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2018/07/28/DL_04CNN_week1/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -243,7 +238,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2018/07/28/DL_04CNN_week1/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -255,7 +250,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/深度学习/" class="color5">深度学习</a>
+    <a href="/tags/LeetCode/" class="color4">LeetCode</a>
       
   </li>
 
@@ -266,28 +261,22 @@
 </article>
 
 
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是神经网络？"><span class="post-toc-text">什么是神经网络？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单神经元网络"><span class="post-toc-text">单神经元网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多神经元网络"><span class="post-toc-text">多神经元网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#神经网络"><span class="post-toc-text">神经网络</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-    
 
 <nav id="article-nav">
   
-    <a href="/2018/08/12/算法导论 第八章 线性时间排序/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/27/Datawhale/Datawhale_编程_链表/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          《算法导论》第八章 线性时间排序
+          Datawhale-编程-链表
         
       </span>
     </a>
   
   
-    <a href="/2018/07/28/目录/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Datawhale-编程-目录</span>
+    <a href="/2019/02/01/LeetCode/LeetCode_15_ 3Sum/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">LeetCode_15_三数之和</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
