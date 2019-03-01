@@ -12,18 +12,18 @@
 <meta name="keywords" content="算法导论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《算法导论》第七章 快速排序">
-<meta property="og:url" content="http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/index.html">
+<meta property="og:url" content="http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/index.html">
 <meta property="og:site_name" content="D">
 <meta property="og:description" content="《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://zzyydd.com/2018/07/28/算法导论%20第七章%20快速排序/图7-1.png">
-<meta property="og:image" content="http://zzyydd.com/2018/07/28/算法导论%20第七章%20快速排序/图7-2.png">
-<meta property="og:image" content="http://zzyydd.com/2018/07/28/算法导论%20第七章%20快速排序/图7-3.png">
+<meta property="og:image" content="http://zzyydd.com/2018/07/28/算法导论/算法导论%20第七章%20快速排序/图7-1.png">
+<meta property="og:image" content="http://zzyydd.com/2018/07/28/算法导论/算法导论%20第七章%20快速排序/图7-2.png">
+<meta property="og:image" content="http://zzyydd.com/2018/07/28/算法导论/算法导论%20第七章%20快速排序/图7-3.png">
 <meta property="og:updated_time" content="2019-02-27T12:39:01.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《算法导论》第七章 快速排序">
 <meta name="twitter:description" content="《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。">
-<meta name="twitter:image" content="http://zzyydd.com/2018/07/28/算法导论%20第七章%20快速排序/图7-1.png">
+<meta name="twitter:image" content="http://zzyydd.com/2018/07/28/算法导论/算法导论%20第七章%20快速排序/图7-1.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -103,7 +103,7 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-算法导论 第七章 快速排序" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-算法导论/算法导论 第七章 快速排序" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -146,8 +146,8 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> p &lt; r</span><br><span class="line">	q = PARTITION(A,p,r)</span><br><span class="line">	QUICKSORT(A,p,q-1)</span><br><span class="line">	QUICKSORT(A,q+1,r)</span><br></pre></td></tr></table></figure>
 <p>为了排序一个数组A的全部元素，初始调用是QUICKSORT(A,1,A.length)。<br><b>数组的划分</b><br>算法的关键部分是PARTITION过程，它实现了对子数组A[p..r]的原址排序。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PARTITION(A,p,r)</span><br></pre></td></tr></table></figure></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = A[r]</span><br><span class="line">i = p - 1</span><br><span class="line"><span class="keyword">for</span> j = p to r - 1</span><br><span class="line">	<span class="keyword">if</span> A[j] ≤ x</span><br><span class="line">		i = i + 1</span><br><span class="line">		exchange A[i] with A[j]</span><br><span class="line">exchange A[i+1] with A[r]</span><br><span class="line"><span class="built_in">return</span> i + 1</span><br></pre></td></tr></table></figure>
-<p>图7-1显示了PARTITION如何在一个包含8个元素的数组上进行操作的过程。PARTITION总是选择一个x=A[r]作为<b>主元</b>，并围绕它来划分子数组A[p..r.<br><img src="/2018/07/28/算法导论 第七章 快速排序/图7-1.png"><br><img src="/2018/07/28/算法导论 第七章 快速排序/图7-2.png"></p>
-<h3 id="快速排序的性能"><a href="#快速排序的性能" class="headerlink" title="快速排序的性能"></a>快速排序的性能</h3><p>快速排序的运行时间依赖于划分是否平衡，而平衡与否又依赖于用于划分的元素。如果划分是平衡的，那么快速排序算法性能与归并排序一样。如果划分是不平衡的，那么快速排序的性能就接近于插入排序了。<br><b>最坏情况划分</b><br>当划分产生的两个子问题分别包含了n-1个元素和0个元素时，快速排序的最坏情况发生了。假设算法的每一次递归调用中都出现这种不平衡划分，划分操作的时间复杂度是Θ(n)。由于对一个大小为0的数组进行递归调用会直接返回，因此T(0)=Θ(1).<br>于是算法运行时间的递归式可以表示为：<br>        T(n)=T(n-1)+T(0)+Θ(n)=T(n-1)+Θ(n)<br>解为T(n)=Θ(n²)。<br><b>最好情况划分</b><br>在可能的最平衡的划分中，PARTITION得到的两个子问题，其中一个的规模为⌊n/2⌋，另一个为⌈n/2⌉-1。这种情况下，快速排序的性能非常好。此时，算法隐形时间的递归式为：<br>        T(n)=2T(n/2)+Θ(n)<br>在上式中，忽略了一些余项以及减1操作的影响，解为T(n)=Θ(nlgn)。<br><b>平衡划分</b><br>快速排序的平均运行时间更接近于其最好情况，而非最坏情况。<br>例如，假设划分算法总是产生9：1的划分，此时，得到快速排序时间复杂度的递归式为：<br>        T(n)=T(9n/10)+T(n/10)+cn<br>这里，显式地写出了Θ(n)项中所隐含的常数c。图7-4显示了这一递归调用所对应的递归树。<br>注意，书中每一层的代价都是cn，直到在深度log_n10 n=Θ(lgn)处达到递归的边界条件时为止，之后每层代价至多为cn。递归在深度为log_10/9 n<br>=Θ(lgn)处终止。因此，快速排序的总代价为O(nlgn)。<br><img src="/2018/07/28/算法导论 第七章 快速排序/图7-3.png"><br><b>对于平均情况的直观观察</b><br>在平均情况下，PARTITION所产生的划分同时混合有“好”和“差”的划分。此时，在与PARTITION平均情况执行过程所对应的递归树中，好和差的划分是随机分布的。基于直觉，假设好和差的划分交替出现在树的各层上，并且好的划分是最好情况划分，而差的划分是最坏情况划分，图7-5(a)显示除了递归树的连续两层上的划分情况。<br>在一个差的划分后面接着一个好的划分，这种组合产生出三个子数组，大小分别为0、(n-1)/2-1和(n-1)/2。这一组合的划分代价为Θ(n)+Θ(n-1)=Θ(n)。该代价并不比图7-5(b)中的更差。在图7-5(b)中，一层划分就产生出大小为(n-1)/2的两个子数组，划分代价为Θ(n)。但是，后者的划分是平衡的。因此，当好和差的划分交替出现时，快速排序的时间复杂度与拳师号的划分时一样，仍然是O(nlgn)。区别只是O符号中隐含的常数因子要略大一些。</p>
+<p>图7-1显示了PARTITION如何在一个包含8个元素的数组上进行操作的过程。PARTITION总是选择一个x=A[r]作为<b>主元</b>，并围绕它来划分子数组A[p..r.<br><img src="/2018/07/28/算法导论/算法导论 第七章 快速排序/图7-1.png"><br><img src="/2018/07/28/算法导论/算法导论 第七章 快速排序/图7-2.png"></p>
+<h3 id="快速排序的性能"><a href="#快速排序的性能" class="headerlink" title="快速排序的性能"></a>快速排序的性能</h3><p>快速排序的运行时间依赖于划分是否平衡，而平衡与否又依赖于用于划分的元素。如果划分是平衡的，那么快速排序算法性能与归并排序一样。如果划分是不平衡的，那么快速排序的性能就接近于插入排序了。<br><b>最坏情况划分</b><br>当划分产生的两个子问题分别包含了n-1个元素和0个元素时，快速排序的最坏情况发生了。假设算法的每一次递归调用中都出现这种不平衡划分，划分操作的时间复杂度是Θ(n)。由于对一个大小为0的数组进行递归调用会直接返回，因此T(0)=Θ(1).<br>于是算法运行时间的递归式可以表示为：<br>        T(n)=T(n-1)+T(0)+Θ(n)=T(n-1)+Θ(n)<br>解为T(n)=Θ(n²)。<br><b>最好情况划分</b><br>在可能的最平衡的划分中，PARTITION得到的两个子问题，其中一个的规模为⌊n/2⌋，另一个为⌈n/2⌉-1。这种情况下，快速排序的性能非常好。此时，算法隐形时间的递归式为：<br>        T(n)=2T(n/2)+Θ(n)<br>在上式中，忽略了一些余项以及减1操作的影响，解为T(n)=Θ(nlgn)。<br><b>平衡划分</b><br>快速排序的平均运行时间更接近于其最好情况，而非最坏情况。<br>例如，假设划分算法总是产生9：1的划分，此时，得到快速排序时间复杂度的递归式为：<br>        T(n)=T(9n/10)+T(n/10)+cn<br>这里，显式地写出了Θ(n)项中所隐含的常数c。图7-4显示了这一递归调用所对应的递归树。<br>注意，书中每一层的代价都是cn，直到在深度log_n10 n=Θ(lgn)处达到递归的边界条件时为止，之后每层代价至多为cn。递归在深度为log_10/9 n<br>=Θ(lgn)处终止。因此，快速排序的总代价为O(nlgn)。<br><img src="/2018/07/28/算法导论/算法导论 第七章 快速排序/图7-3.png"><br><b>对于平均情况的直观观察</b><br>在平均情况下，PARTITION所产生的划分同时混合有“好”和“差”的划分。此时，在与PARTITION平均情况执行过程所对应的递归树中，好和差的划分是随机分布的。基于直觉，假设好和差的划分交替出现在树的各层上，并且好的划分是最好情况划分，而差的划分是最坏情况划分，图7-5(a)显示除了递归树的连续两层上的划分情况。<br>在一个差的划分后面接着一个好的划分，这种组合产生出三个子数组，大小分别为0、(n-1)/2-1和(n-1)/2。这一组合的划分代价为Θ(n)+Θ(n-1)=Θ(n)。该代价并不比图7-5(b)中的更差。在图7-5(b)中，一层划分就产生出大小为(n-1)/2的两个子数组，划分代价为Θ(n)。但是，后者的划分是平衡的。因此，当好和差的划分交替出现时，快速排序的时间复杂度与拳师号的划分时一样，仍然是O(nlgn)。区别只是O符号中隐含的常数因子要略大一些。</p>
 <h3 id="快速排序的随机化版本"><a href="#快速排序的随机化版本" class="headerlink" title="快速排序的随机化版本"></a>快速排序的随机化版本</h3><p>如果采用一种称为<b>随机抽样</b>的随机化技术，可以使得分析变得更加简单。随机抽样是从子数组A[p..r]中随机选择一个元素作为主元。<br>首先将A[r]与从A[p..r]中随机选出的一个元素交换。通过对序列p,…,r的随机抽样，我们可以保证主元元素x=A[r]是等概率地从子数组的r-p+1个元素中选取的。因为主元元素是随机选取的，我们期望在平均情况下，对输入数组的划分是比较均衡的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RANDOMIZED-PARTITION(A,p,r)</span><br></pre></td></tr></table></figure></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i = RANDOM(p,r)</span><br><span class="line">exchange A[r] with A[i]</span><br><span class="line"><span class="built_in">return</span> PARTITION(A,p,r)</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RANDOMIZED-QUICKSORT(A,p,r)</span><br></pre></td></tr></table></figure>
@@ -156,7 +156,7 @@
             <div class="post-copyright">
     <div class="content">
         <p>最后更新： 2019年02月27日 20:39</p>
-        <p>原始链接： <a class="post-url" href="/2018/07/28/算法导论 第七章 快速排序/" title="《算法导论》第七章 快速排序">http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/</a></p>
+        <p>原始链接： <a class="post-url" href="/2018/07/28/算法导论/算法导论 第七章 快速排序/" title="《算法导论》第七章 快速排序">http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -216,7 +216,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/&title=《《算法导论》第七章 快速排序》 — D&pic=images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/&title=《《算法导论》第七章 快速排序》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -226,22 +226,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/&title=《《算法导论》第七章 快速排序》 — D&source=《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/&title=《《算法导论》第七章 快速排序》 — D&source=《算法导论》第七章 快速排序快速排序通常是实际排序应用中最好的选择。" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《《算法导论》第七章 快速排序》 — D&url=http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/&via=http://zzyydd.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《《算法导论》第七章 快速排序》 — D&url=http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/&via=http://zzyydd.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -251,7 +251,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2018/07/28/算法导论 第七章 快速排序/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2018/07/28/算法导论/算法导论 第七章 快速排序/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -294,7 +294,7 @@
     </a>
   
   
-    <a href="/2018/07/22/算法导论 第六章 堆排序/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/22/算法导论/算法导论 第六章 堆排序/" id="article-nav-older" class="article-nav-link-wrap">
       <span class="article-nav-title">《算法导论》第六章 堆排序</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
@@ -359,7 +359,7 @@
             <a class="category-link" href="/categories/LeetCode/">LeetCode</a><a class="category-link" href="/categories/python基础/">python基础</a><a class="category-link" href="/categories/数据结构-Datawhale/">数据结构 Datawhale</a><a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 13.33px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -392,7 +392,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 10px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 13.33px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
         </div>
     </div>
 </div>

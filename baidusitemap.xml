@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zzyydd.com/2019/03/01/Datawhale/Datawhale_python_02/</loc>
+    <lastmod>2019-03-01</lastmod>
+  </url>  <url>
     <loc>http://zzyydd.com/2019/02/28/%E7%9B%AE%E5%BD%95/</loc>
     <lastmod>2019-02-28</lastmod>
   </url>  <url>
@@ -43,13 +46,13 @@
     <loc>http://zzyydd.com/2019/02/02/LeetCode/LeetCode_16_%203SumClosest/</loc>
     <lastmod>2019-02-27</lastmod>
   </url>  <url>
-    <loc>http://zzyydd.com/2018/08/12/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E5%85%AB%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F/</loc>
+    <loc>http://zzyydd.com/2018/08/12/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E5%85%AB%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2019-02-27</lastmod>
   </url>  <url>
-    <loc>http://zzyydd.com/2018/07/22/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%A0%86%E6%8E%92%E5%BA%8F/</loc>
+    <loc>http://zzyydd.com/2018/07/22/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%A0%86%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2019-02-27</lastmod>
   </url>  <url>
-    <loc>http://zzyydd.com/2018/07/28/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</loc>
+    <loc>http://zzyydd.com/2018/07/28/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2019-02-27</lastmod>
   </url>  <url>
     <loc>http://zzyydd.com/2019/01/27/LeetCode/LeetCode_01_TwoSum/</loc>
@@ -58,7 +61,7 @@
     <loc>http://zzyydd.com/2018/07/28/DL_04CNN_week1/</loc>
     <lastmod>2019-02-27</lastmod>
   </url>  <url>
-    <loc>http://zzyydd.com/2019/02/27/Datawhale_python_01/</loc>
+    <loc>http://zzyydd.com/2019/02/27/Datawhale/Datawhale_python_01/</loc>
     <lastmod>2019-02-27</lastmod>
   </url>
 </urlset>
