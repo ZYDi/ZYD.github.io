@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Datawhale-python基础-03 | D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="D">
+  
+  <meta name="description" content="dict字典、集合、判断语句、三目表达式、循环语句。">
+<meta name="keywords" content="python基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Datawhale-python基础-03">
+<meta property="og:url" content="http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/index.html">
+<meta property="og:site_name" content="D">
+<meta property="og:description" content="dict字典、集合、判断语句、三目表达式、循环语句。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-03T13:56:02.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Datawhale-python基础-03">
+<meta name="twitter:description" content="dict字典、集合、判断语句、三目表达式、循环语句。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet" type="text/css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">D</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        D
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        宇宙无敌大帅比！
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Datawhale/Datawhale_python_03" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Datawhale-python基础-03
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/python基础/">python基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-03-03
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>dict字典、集合、判断语句、三目表达式、循环语句。</p>
+<a id="more"></a>
+<h2 id="dict字典"><a href="#dict字典" class="headerlink" title="dict字典"></a>dict字典</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;<span class="string">'Alice'</span>: <span class="string">'2341'</span>, <span class="string">'Beth'</span>: <span class="string">'9102'</span>, <span class="string">'Cecil'</span>: <span class="string">'3258'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>或<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123; <span class="string">'abc'</span>: <span class="number">456</span> &#125;</span><br><span class="line">dict2 = &#123; <span class="string">'abc'</span>: <span class="number">123</span>, <span class="number">98.6</span>: <span class="number">37</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;<span class="string">'Name'</span>: <span class="string">'Zara'</span>, <span class="string">'Age'</span>: <span class="number">7</span>, <span class="string">'Class'</span>: <span class="string">'First'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"dict['Name']: "</span>, dict[<span class="string">'Name'</span>];</span><br><span class="line"><span class="keyword">print</span> <span class="string">"dict['Age']: "</span>, dict[<span class="string">'Age'</span>];</span><br><span class="line"><span class="comment">#以上实例输出结果：</span></span><br><span class="line"><span class="comment">#dict['Name']:  Zara</span></span><br><span class="line"><span class="comment">#dict['Age']:  7</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;<span class="string">'Name'</span>: <span class="string">'Zara'</span>, <span class="string">'Age'</span>: <span class="number">7</span>, <span class="string">'Class'</span>: <span class="string">'First'</span>&#125;;</span><br><span class="line"></span><br><span class="line">dict[<span class="string">'Age'</span>] = <span class="number">8</span>; <span class="comment"># update existing entry</span></span><br><span class="line">dict[<span class="string">'School'</span>] = <span class="string">"DPS School"</span>; <span class="comment"># Add new entry</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> <span class="string">"dict['Age']: "</span>, dict[<span class="string">'Age'</span>];</span><br><span class="line"><span class="keyword">print</span> <span class="string">"dict['School']: "</span>, dict[<span class="string">'School'</span>];</span><br><span class="line"><span class="comment">#以上实例输出结果：</span></span><br><span class="line"><span class="comment">#dict['Age']:  8</span></span><br><span class="line"><span class="comment">#dict['School']:  DPS School</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;<span class="string">'Name'</span>: <span class="string">'Zara'</span>, <span class="string">'Age'</span>: <span class="number">7</span>, <span class="string">'Class'</span>: <span class="string">'First'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> dict[<span class="string">'Name'</span>]; <span class="comment"># 删除键是'Name'的条目</span></span><br><span class="line">dict.clear();     <span class="comment"># 清空词典所有条目</span></span><br><span class="line"><span class="keyword">del</span> dict ;        <span class="comment"># 删除词典</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"dict['Age']: "</span>, dict[<span class="string">'Age'</span>];</span><br><span class="line"><span class="keyword">print</span> <span class="string">"dict['School']: "</span>, dict[<span class="string">'School'</span>];</span><br><span class="line"><span class="comment">#但这会引发一个异常，因为用del后字典不再存在：</span></span><br><span class="line">dict[<span class="string">'Age'</span>]:</span><br></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cmp(dict1, dict2)  <span class="comment">#比较两个字典元素。</span></span><br><span class="line">len(dict)              <span class="comment">#计算字典元素个数，即键的总数。</span></span><br><span class="line">str(dict)              <span class="comment">#输出字典可打印的字符串表示。</span></span><br><span class="line">type(variable)     <span class="comment">#返回输入的变量类型，如果变量是字典就返回字典类型。</span></span><br></pre></td></tr></table></figure>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">radiansdict.clear()    <span class="comment">#删除字典内所有元素</span></span><br><span class="line">radiansdict.copy()    <span class="comment">#返回一个字典的浅复制</span></span><br><span class="line">radiansdict.fromkeys()    <span class="comment">#创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值</span></span><br><span class="line">radiansdict.get(key, default=<span class="keyword">None</span>)    <span class="comment">#返回指定键的值，如果值不在字典中返回default值</span></span><br><span class="line">radiansdict.has_key(key)    <span class="comment">#如果键在字典dict里返回true，否则返回false</span></span><br><span class="line">radiansdict.items()    <span class="comment">#以列表返回可遍历的(键, 值) 元组数组</span></span><br><span class="line">radiansdict.keys()    <span class="comment">#以列表返回一个字典所有的键</span></span><br><span class="line">radiansdict.setdefault(key, default=<span class="keyword">None</span>)    <span class="comment">#和get()类似, 但如果键不已经存在于字典中，将会添加键并将值设为default</span></span><br><span class="line">radiansdict.update(dict2)    <span class="comment">#把字典dict2的键/值对更新到dict里</span></span><br><span class="line">radiansdict.values()    <span class="comment">#以列表返回字典中的所有值</span></span><br></pre></td></tr></table></figure>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="创建-1"><a href="#创建-1" class="headerlink" title="创建"></a>创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">basket = [<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><p>1.add 向集合中添加元素<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s.add(<span class="string">"s"</span>)</span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line"><span class="comment"># &#123;1, 2, 3, 4, 5, 6, 's'&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>2.clear 清空集合<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s.clear()</span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line"><span class="comment"># set()</span></span><br></pre></td></tr></table></figure></p>
+<p>3.copy 返回集合的浅拷贝<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">new_s = s.copy()</span><br><span class="line"><span class="keyword">print</span> new_s</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line"><span class="comment"># &#123;1, 2, 3, 4, 5, 6&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>4.pop 删除并返回任意的集合元素（如果集合为空，会引发 KeyError）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s.pop()　　<span class="comment"># pop删除时是无序的随机删除</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;2, 3, 4, 5, 6&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>5.remove 删除集合中的一个元素（如果元素不存在，会引发 KeyError）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s.remove(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;1, 2, 4, 5, 6&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>6.discard 删除集合中的一个元素（如果元素不存在，则不执行任何操作）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s.discard(<span class="string">"sb"</span>)</span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;1, 2, 3, 4, 5, 6&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>7.intersection 将两个集合的交集作为一个新集合返回<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;</span><br><span class="line"><span class="keyword">print</span> s.intersection(s2)</span><br><span class="line"><span class="comment"># &#123;3, 4, 5, 6&#125;</span></span><br><span class="line"><span class="keyword">print</span> s&amp;s2　　<span class="comment"># 可以达到相同的效果</span></span><br><span class="line"><span class="comment"># &#123;3, 4, 5, 6&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>8.union 将集合的并集作为一个新集合返回<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;</span><br><span class="line">print(s.union(s2))</span><br><span class="line"><span class="comment"># &#123;1, 2, 3, 4, 5, 6, 7, 8&#125;</span></span><br><span class="line">print(s|s2)    <span class="comment"># 用 | 可以达到相同效果</span></span><br><span class="line"><span class="comment">#&#123;1, 2, 3, 4, 5, 6, 7, 8&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>9.difference 将两个或多个集合的差集作为一个新集合返回　<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;</span><br><span class="line">print(<span class="string">"差集:"</span>,s.difference(s2)) <span class="comment"># 去除s和s2中相同元素，删除s2 保留s中剩余元素</span></span><br><span class="line"><span class="comment"># 差集: &#123;1, 2&#125;</span></span><br><span class="line">print(<span class="string">"差集:"</span>,s2.difference(s))　　<span class="comment"># 去除s和s2中相同元素，删除s2 保留s2中剩余元素&lt;br&gt;</span></span><br><span class="line"><span class="comment"># 差集: &#123;8, 7&#125;</span></span><br><span class="line">print(<span class="string">"差集:"</span>,s - s2)    <span class="comment"># 符号 - 可以达到相同结果</span></span><br><span class="line"><span class="comment"># 差集: &#123;1, 2&#125;</span></span><br><span class="line">print(<span class="string">"差集:"</span>,s2 - s)    <span class="comment"># 符号 - 可以达到相同结果</span></span><br><span class="line"><span class="comment"># 差集: &#123;8, 7&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>10.　symmetric_difference 将两个集合的对称差作为一个新集合返回(两个集合合并删除相同部分，其余保留)　<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;</span><br><span class="line"><span class="keyword">print</span> s.symmetric_difference(s2)</span><br><span class="line"><span class="comment"># &#123;1, 2, 7, 8&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>11.update 用自己和另一个的并集来更新这个集合<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="string">'p'</span>, <span class="string">'y'</span>&#125;</span><br><span class="line">s.update([<span class="string">'t'</span>, <span class="string">'h'</span>, <span class="string">'o'</span>, <span class="string">'n'</span>])    <span class="comment"># 添加多个元素</span></span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;'p', 't', 'o', 'y', 'h', 'n'&#125;</span></span><br><span class="line">s.update([<span class="string">'H'</span>, <span class="string">'e'</span>], &#123;<span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>&#125;)    <span class="comment"># 添加列表和集合</span></span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;'p', 'H', 't', 'l', 'o', 'y', 'e', 'h', 'n'&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>12.intersection_update()  用自己和另一个的交集来更新这个集合<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'q'</span>&#125;</span><br><span class="line">s2 = &#123;<span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>&#125;</span><br><span class="line">s.intersection_update(s2)   <span class="comment"># 相当于s = s - s2</span></span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;'c', 'd'&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>13.isdisjoint() 　如果两个集合有一个空交集，返回 True<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line">s1 = &#123;<span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">print</span> s.isdisjoint(s1)   </span><br><span class="line"><span class="comment"># True                          # s  和 s1 两个集合的交集为空返回 True</span></span><br><span class="line"><span class="keyword">print</span> s.isdisjoint(s2)</span><br><span class="line"><span class="comment"># False                        # s  和 s2 两个集合的交集为 2 不是空 所有返回False</span></span><br></pre></td></tr></table></figure></p>
+<p>14.issubset()　如果另一个集合包含这个集合，返回 True<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">s1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">print</span> s.issubset(s1)</span><br><span class="line"><span class="comment"># True                            # 因为 s1 集合 包含 s 集合</span></span><br><span class="line"><span class="keyword">print</span> s.issubset(s2)</span><br><span class="line"><span class="comment">#False                           # s2 集合 不包含 s 集合</span></span><br></pre></td></tr></table></figure></p>
+<p>15.issuperset() 　如果这个集合包含另一个集合，返回 True<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">s1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">print</span> s.issuperset(s1)</span><br><span class="line"><span class="comment"># False                          # s 集合不包含 s1 集合</span></span><br><span class="line"><span class="keyword">print</span> s.issuperset(s2)</span><br><span class="line"><span class="comment"># True                         # s 集合包含 s2 集合</span></span><br></pre></td></tr></table></figure></p>
+<p>16.difference_update() 从这个集合中删除另一个集合的所有元素<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">s1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">s.difference_update(s2)</span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;1&#125;                        # s2中的2,3   s集合中也有2,3  所以保留1</span></span><br><span class="line">s1.difference_update(s2)</span><br><span class="line"><span class="keyword">print</span> s1</span><br><span class="line"><span class="comment"># &#123;1, 4&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>17.symmetric_difference_update() 用自己和另一个的对称差来更新这个集合<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">s1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">s2 = &#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">s1.symmetric_difference_update(s)</span><br><span class="line"><span class="keyword">print</span> s1</span><br><span class="line"><span class="comment"># &#123;4&#125;</span></span><br><span class="line">s1.symmetric_difference_update(s2)</span><br><span class="line"><span class="keyword">print</span> s1</span><br><span class="line"><span class="comment"># &#123;2, 3, 4&#125;</span></span><br><span class="line">s.symmetric_difference_update(s2)</span><br><span class="line"><span class="keyword">print</span> s</span><br><span class="line"><span class="comment"># &#123;1&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if 表达式1:</span><br><span class="line">    语句</span><br><span class="line">    if 表达式2:</span><br><span class="line">        语句</span><br><span class="line">    elif 表达式3:</span><br><span class="line">        语句</span><br><span class="line">    else</span><br><span class="line">        语句</span><br><span class="line">elif 表达式4:</span><br><span class="line">    语句</span><br><span class="line">else:</span><br><span class="line">    语句</span><br></pre></td></tr></table></figure>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> count &lt; <span class="number">5</span>:</span><br><span class="line">   <span class="keyword">print</span> (count, <span class="string">" 小于 5"</span>)</span><br><span class="line">   count = count + <span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">   <span class="keyword">print</span> (count, <span class="string">" 大于或等于 5"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+<h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> <span class="string">'Runoob'</span>:     <span class="comment"># 第一个实例</span></span><br><span class="line">   <span class="keyword">if</span> letter == <span class="string">'b'</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">   <span class="keyword">print</span> (<span class="string">'当前字母为 :'</span>, letter)</span><br><span class="line">  </span><br><span class="line">var = <span class="number">10</span>                    <span class="comment"># 第二个实例</span></span><br><span class="line"><span class="keyword">while</span> var &gt; <span class="number">0</span>:              </span><br><span class="line">   <span class="keyword">print</span> (<span class="string">'当期变量值为 :'</span>, var)</span><br><span class="line">   var = var <span class="number">-1</span></span><br><span class="line">   <span class="keyword">if</span> var == <span class="number">5</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"Good bye!"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> <span class="string">'Runoob'</span>:     <span class="comment"># 第一个实例</span></span><br><span class="line">   <span class="keyword">if</span> letter == <span class="string">'o'</span>:        <span class="comment"># 字母为 o 时跳过输出</span></span><br><span class="line">      <span class="keyword">continue</span></span><br><span class="line">   <span class="keyword">print</span> (<span class="string">'当前字母 :'</span>, letter)</span><br><span class="line"></span><br><span class="line">var = <span class="number">10</span>                    <span class="comment"># 第二个实例</span></span><br><span class="line"><span class="keyword">while</span> var &gt; <span class="number">0</span>:              </span><br><span class="line">   var = var <span class="number">-1</span></span><br><span class="line">   <span class="keyword">if</span> var == <span class="number">5</span>:             <span class="comment"># 变量为 5 时跳过输出</span></span><br><span class="line">      <span class="keyword">continue</span></span><br><span class="line">   <span class="keyword">print</span> (<span class="string">'当前变量值 :'</span>, var)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"Good bye!"</span>)</span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年03月03日 21:56</p>
+        <p>原始链接： <a class="post-url" href="/2019/03/03/Datawhale/Datawhale_python_03/" title="Datawhale-python基础-03">http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/</a></p>
+        <!--
+        <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
+        -->
+        <footer>
+            <a href="http://zzyydd.com">
+                <img src="/images/logo.png" alt="D">
+                D
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        喵喵喵~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/&title=《Datawhale-python基础-03》 — D&pic=images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/&title=《Datawhale-python基础-03》 — D&source=dict字典、集合、判断语句、三目表达式、循环语句。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Datawhale-python基础-03》 — D&url=http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/&via=http://zzyydd.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/03/03/Datawhale/Datawhale_python_03/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/python基础/" class="color4">python基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#dict字典"><span class="post-toc-text">dict字典</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建"><span class="post-toc-text">创建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查找"><span class="post-toc-text">查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改"><span class="post-toc-text">修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除"><span class="post-toc-text">删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数"><span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法"><span class="post-toc-text">方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#集合"><span class="post-toc-text">集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-1"><span class="post-toc-text">创建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法-1"><span class="post-toc-text">方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断语句"><span class="post-toc-text">判断语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#循环语句"><span class="post-toc-text">循环语句</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#while循环"><span class="post-toc-text">while循环</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#for"><span class="post-toc-text">for</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#break"><span class="post-toc-text">break</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#continue"><span class="post-toc-text">continue</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/01/Datawhale/Datawhale_python_02/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Datawhale-python基础-02</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by D
+      &copy; 2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://zzyydd.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/LeetCode/">LeetCode</a><a class="category-link" href="/categories/python基础/">python基础</a><a class="category-link" href="/categories/数据结构-Datawhale/">数据结构 Datawhale</a><a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 16.67px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 16.67px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 16.67px;">算法导论</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
