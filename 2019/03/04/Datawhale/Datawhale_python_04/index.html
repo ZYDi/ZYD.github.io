@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Datawhale-python基础-04 | D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="D">
+  
+  <meta name="description" content="函数。">
+<meta name="keywords" content="python基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Datawhale-python基础-04">
+<meta property="og:url" content="http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/index.html">
+<meta property="og:site_name" content="D">
+<meta property="og:description" content="函数。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-04T07:59:20.012Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Datawhale-python基础-04">
+<meta name="twitter:description" content="函数。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet" type="text/css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">D</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        D
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        宇宙无敌大帅比！
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Datawhale/Datawhale_python_04" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Datawhale-python基础-04
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/python基础/">python基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-03-04
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>函数。</p>
+<a id="more"></a>
+<h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><p>函数代码块以 def 关键词开头，后接函数标识符名称和圆括号()。<br>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于定义参数。<br>函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。<br>函数内容以冒号起始，并且缩进。<br>return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def functionname( parameters ):</span><br><span class="line">   &quot;函数_文档字符串&quot;</span><br><span class="line">   function_suite</span><br><span class="line">   return [expression]</span><br></pre></td></tr></table></figure></p>
+<h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><p>以下是调用函数时可使用的正式参数类型：<br>必备参数<br>关键字参数<br>默认参数<br>不定长参数</p>
+<h3 id="必备参数"><a href="#必备参数" class="headerlink" title="必备参数"></a>必备参数</h3><p>必备参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用printme()函数，你必须传入一个参数，不然会出现语法错误：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printme</span><span class="params">( str )</span>:</span></span><br><span class="line">   <span class="string">"打印任何传入的字符串"</span></span><br><span class="line">   <span class="keyword">print</span> str;</span><br><span class="line">   <span class="keyword">return</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用printme函数</span></span><br><span class="line">printme();</span><br></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"test.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    printme();</span><br><span class="line">TypeError: printme() takes exactly <span class="number">1</span> argument (<span class="number">0</span> given)</span><br></pre></td></tr></table></figure></p>
+<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。<br>使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。<br>以下实例在函数 printme() 调用时使用参数名：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printme</span><span class="params">( str )</span>:</span></span><br><span class="line">   <span class="string">"打印任何传入的字符串"</span></span><br><span class="line">   <span class="keyword">print</span> str;</span><br><span class="line">   <span class="keyword">return</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用printme函数</span></span><br><span class="line">printme( str = <span class="string">"My string"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>结果:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">My string</span><br></pre></td></tr></table></figure></p>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span><span class="params">( name, age = <span class="number">35</span> )</span>:</span></span><br><span class="line">   <span class="string">"打印任何传入的字符串"</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">"Name: "</span>, name;</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"Age "</span>, age;</span><br><span class="line">   <span class="keyword">return</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用printinfo函数</span></span><br><span class="line">printinfo( age=<span class="number">50</span>, name=<span class="string">"miki"</span> );</span><br><span class="line">printinfo( name=<span class="string">"miki"</span> );</span><br></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name:  miki</span><br><span class="line">Age  <span class="number">50</span></span><br><span class="line">Name:  miki</span><br><span class="line">Age  <span class="number">35</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h3><p>你可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和上述2种参数不同，声明时不会命名。基本语法如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functionname</span><span class="params">([formal_args,] *var_args_tuple )</span>:</span></span><br><span class="line">   <span class="string">"函数_文档字符串"</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure></p>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><h3 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h3><p>定义在函数内部的变量拥有一个局部作用域，定义在函数外的拥有全局作用域。<br>局部变量只能在其被声明的函数内部访问，而全局变量可以在整个程序范围内访问。调用函数时，所有在函数内声明的变量名称都将被加入到作用域中。如下实例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">total = <span class="number">0</span>; <span class="comment"># 这是一个全局变量</span></span><br><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">( arg1, arg2 )</span>:</span></span><br><span class="line">   <span class="comment">#返回2个参数的和."</span></span><br><span class="line">   total = arg1 + arg2; <span class="comment"># total在这里是局部变量.</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">"函数内是局部变量 : "</span>, total</span><br><span class="line">   <span class="keyword">return</span> total;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用sum函数</span></span><br><span class="line">sum( <span class="number">10</span>, <span class="number">20</span> );</span><br><span class="line"><span class="keyword">print</span> <span class="string">"函数外是全局变量 : "</span>, total</span><br></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数内是局部变量 :  <span class="number">30</span></span><br><span class="line">函数外是全局变量 :  <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h2><h3 id="return语句"><a href="#return语句" class="headerlink" title="return语句"></a>return语句</h3><p>return语句[表达式]退出函数，选择性地向调用方返回一个表达式。不带参数值的return语句返回None。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">( arg1, arg2 )</span>:</span></span><br><span class="line">   <span class="comment"># 返回2个参数的和."</span></span><br><span class="line">   total = arg1 + arg2</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"函数内 : "</span>, total</span><br><span class="line">   <span class="keyword">return</span> total;</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用sum函数</span></span><br><span class="line">total = sum( <span class="number">10</span>, <span class="number">20</span> );</span><br></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数内 :  <span class="number">30</span></span><br></pre></td></tr></table></figure></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年03月04日 15:59</p>
+        <p>原始链接： <a class="post-url" href="/2019/03/04/Datawhale/Datawhale_python_04/" title="Datawhale-python基础-04">http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/</a></p>
+        <!--
+        <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
+        -->
+        <footer>
+            <a href="http://zzyydd.com">
+                <img src="/images/logo.png" alt="D">
+                D
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        喵喵喵~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/&title=《Datawhale-python基础-04》 — D&pic=images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/&title=《Datawhale-python基础-04》 — D&source=函数。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Datawhale-python基础-04》 — D&url=http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/&via=http://zzyydd.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/03/04/Datawhale/Datawhale_python_04/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/python基础/" class="color4">python基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数的定义"><span class="post-toc-text">函数的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数参数"><span class="post-toc-text">函数参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#必备参数"><span class="post-toc-text">必备参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关键字参数"><span class="post-toc-text">关键字参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#默认参数"><span class="post-toc-text">默认参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不定长参数"><span class="post-toc-text">不定长参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量作用域"><span class="post-toc-text">变量作用域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局变量和局部变量"><span class="post-toc-text">全局变量和局部变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数返回值"><span class="post-toc-text">函数返回值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#return语句"><span class="post-toc-text">return语句</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/03/Datawhale/Datawhale_python_03/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Datawhale-python基础-03</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by D
+      &copy; 2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://zzyydd.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/LeetCode/">LeetCode</a><a class="category-link" href="/categories/python基础/">python基础</a><a class="category-link" href="/categories/数据结构-Datawhale/">数据结构 Datawhale</a><a class="category-link" href="/categories/深度学习/">深度学习</a><a class="category-link" href="/categories/算法/">算法</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 17.5px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 12.5px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/python基础/" style="font-size: 17.5px;">python基础</a> <a href="/tags/数据结构/" style="font-size: 12.5px;">数据结构</a> <a href="/tags/深度学习/" style="font-size: 10px;">深度学习</a> <a href="/tags/算法导论/" style="font-size: 15px;">算法导论</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
