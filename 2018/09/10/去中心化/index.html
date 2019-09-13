@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>LeetCode_04_寻找两个有序数组的中位数 | D</title>
+  <title>去中心化 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。">
-<meta name="keywords" content="LeetCode">
+  <meta name="description" content="去中心化">
+<meta name="keywords" content="产品">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_04_寻找两个有序数组的中位数">
-<meta property="og:url" content="http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/index.html">
+<meta property="og:title" content="去中心化">
+<meta property="og:url" content="http://zzyydd.com/2018/09/10/去中心化/index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。">
+<meta property="og:description" content="去中心化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T12:39:31.852Z">
+<meta property="og:updated_time" content="2019-09-13T11:33:23.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_04_寻找两个有序数组的中位数">
-<meta name="twitter:description" content="给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。">
+<meta name="twitter:title" content="去中心化">
+<meta name="twitter:description" content="去中心化">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -99,14 +99,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-LeetCode/LeetCode_04_MedianofTwoSortedArrays" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-去中心化" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      LeetCode_04_寻找两个有序数组的中位数
+      去中心化
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -114,12 +114,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/LeetCode/">LeetCode</a>
+                      <a href="/categories/产品/">产品</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-01-28
+          <i class="fa fa-calendar"></i>  2018-09-10
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -135,21 +135,25 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。</p>
-<p>请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。</p>
+            <p>去中心化</p>
 <a id="more"></a>
-<p>你可以假设 nums1 和 nums2 不会同时为空。</p>
-<p>示例 1:</p>
-<p>nums1 = [1, 3]<br>nums2 = [2]</p>
-<p>则中位数是 2.0<br>示例 2:</p>
-<p>nums1 = [1, 2]<br>nums2 = [3, 4]</p>
-<p>则中位数是 (2 + 3)/2 = 2.5</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public double findMedianSortedArrays(int[] A, int[] B) &#123;</span><br><span class="line">        int m = A.length;</span><br><span class="line">        int n = B.length;</span><br><span class="line">        <span class="keyword">if</span> (m &gt; n) &#123; // to ensure m&lt;=n</span><br><span class="line">            int[] temp = A; A = B; B = temp;</span><br><span class="line">            int tmp = m; m = n; n = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        int iMin = 0, iMax = m, halfLen = (m + n + 1) / 2;</span><br><span class="line">        <span class="keyword">while</span> (iMin &lt;= iMax) &#123;</span><br><span class="line">            int i = (iMin + iMax) / 2;</span><br><span class="line">            int j = halfLen - i;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; iMax &amp;&amp; B[j-1] &gt; A[i])&#123;</span><br><span class="line">                iMin = i + 1; // i is too small</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i &gt; iMin &amp;&amp; A[i-1] &gt; B[j]) &#123;</span><br><span class="line">                iMax = i - 1; // i is too big</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123; // i is perfect</span><br><span class="line">                int maxLeft = 0;</span><br><span class="line">                <span class="keyword">if</span> (i == 0) &#123; maxLeft = B[j-1]; &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (j == 0) &#123; maxLeft = A[i-1]; &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123; maxLeft = Math.max(A[i-1], B[j-1]); &#125;</span><br><span class="line">                <span class="keyword">if</span> ( (m + n) % 2 == 1 ) &#123; <span class="built_in">return</span> maxLeft; &#125;</span><br><span class="line"></span><br><span class="line">                int minRight = 0;</span><br><span class="line">                <span class="keyword">if</span> (i == m) &#123; minRight = B[j]; &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (j == n) &#123; minRight = A[i]; &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123; minRight = Math.min(B[j], A[i]); &#125;</span><br><span class="line"></span><br><span class="line">                <span class="built_in">return</span> (maxLeft + minRight) / 2.0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> 0.0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>通常理解下的“中心”实际上指的就是在“上地视角”这样的思维模式下，设计出的用户必经的路口，即“流量分发中心”。</strong></p>
+<p>“去中心化”则是指在似于游戏中的“第一人称视角”这样的模式下，将设计焦点放在当前单个用户身上，伴随用户的使用而提供服务的设计模式。</p>
+<blockquote>
+<ul>
+<li>品牌与用户都是主体，拥有平等的位置，都可以自成中心。</li>
+<li>主体之间都是伴随状态，所以彼此之间首先兑现的是时间的价值。</li>
+<li>主体之间的推荐构成了信息传播的基本方式。</li>
+</ul>
+</blockquote>
+<p>针对不同的用户推荐不同的物品。</p>
+<p>==“去中心化”的本质并不是说消灭中心，而是从用户的“第一人称视角”这个设计思路出发，形成多中心的局面。==</p>
+<p>参考文献：<br>1.<a href="http://www.woshipm.com/it/849770.html" target="_blank" rel="noopener">http://www.woshipm.com/it/849770.html</a></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月27日 20:39</p>
-        <p>原始链接： <a class="post-url" href="/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/" title="LeetCode_04_寻找两个有序数组的中位数">http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/</a></p>
+        <p>最后更新： 2019年09月13日 19:33</p>
+        <p>原始链接： <a class="post-url" href="/2018/09/10/去中心化/" title="去中心化">http://zzyydd.com/2018/09/10/去中心化/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -209,7 +213,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/&title=《LeetCode_04_寻找两个有序数组的中位数》 — D&pic=images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2018/09/10/去中心化/&title=《去中心化》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -219,23 +223,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/&title=《LeetCode_04_寻找两个有序数组的中位数》 — D&source=给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
-请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2018/09/10/去中心化/&title=《去中心化》 — D&source=去中心化" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2018/09/10/去中心化/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_04_寻找两个有序数组的中位数》 — D&url=http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/&via=http://zzyydd.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《去中心化》 — D&url=http://zzyydd.com/2018/09/10/去中心化/&via=http://zzyydd.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2018/09/10/去中心化/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -245,7 +248,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/01/28/LeetCode/LeetCode_04_MedianofTwoSortedArrays/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2018/09/10/去中心化/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -257,7 +260,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/LeetCode/" class="color4">LeetCode</a>
+    <a href="/tags/产品/" class="color3">产品</a>
       
   </li>
 
@@ -271,19 +274,19 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/01/29/LeetCode/LeetCode_05_LongestPalindromicSubstring/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/27/LeetCode/LeetCode_01_TwoSum/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          LeetCode_05_最长回文子串
+          LeetCode_01_两数之和
         
       </span>
     </a>
   
   
-    <a href="/2019/01/28/LeetCode/LeetCode_02_AddTwoNumbers/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">LeetCode_02_两数相加</span>
+    <a href="/2018/08/12/算法导论/算法导论 第八章 线性时间排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">《算法导论》第八章 线性时间排序</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -292,7 +295,7 @@
 
 
     
-        <div id="SOHUCS" sid="LeetCode/LeetCode_04_MedianofTwoSortedArrays"></div>
+        <div id="SOHUCS" sid="去中心化"></div>
 <script type="text/javascript">
     (function(){
         var appid = 'cyupvVtiE';
