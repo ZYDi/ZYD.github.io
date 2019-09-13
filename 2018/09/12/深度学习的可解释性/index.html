@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>LeetCode_15_三数之和 | D</title>
+  <title>《深度学习的可解释性》笔记 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。">
-<meta name="keywords" content="LeetCode">
+  <meta name="description" content="吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.">
+<meta name="keywords" content="可解释性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_15_三数之和">
-<meta property="og:url" content="http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/index.html">
+<meta property="og:title" content="《深度学习的可解释性》笔记">
+<meta property="og:url" content="http://zzyydd.com/2018/09/12/深度学习的可解释性/index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。">
+<meta property="og:description" content="吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T12:39:17.372Z">
+<meta property="og:updated_time" content="2019-09-13T11:57:04.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_15_三数之和">
-<meta name="twitter:description" content="给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。">
+<meta name="twitter:title" content="《深度学习的可解释性》笔记">
+<meta name="twitter:description" content="吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -99,14 +99,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-LeetCode/LeetCode_15_ 3Sum" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-深度学习的可解释性" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      LeetCode_15_三数之和
+      《深度学习的可解释性》笔记
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -114,12 +114,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/LeetCode/">LeetCode</a>
+                      <a href="/categories/深度学习/">深度学习</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-02-01
+          <i class="fa fa-calendar"></i>  2018-09-12
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -135,16 +135,41 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。</p>
+            <p>吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.</p>
 <a id="more"></a>
-<p>注意：答案中不可以包含重复的三元组。</p>
-<p>例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，</p>
-<p>满足要求的三元组集合为：<br>[<br>  [-1, 0, 1],<br>  [-1, -1, 2]<br>]<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def threeSum(self, nums):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        list_ret = []</span><br><span class="line">        d = &#123;&#125; </span><br><span class="line">        num = len(nums)</span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(num): </span><br><span class="line">            <span class="keyword">if</span> i == 0 or nums[i]&gt;nums[i-1]: <span class="comment">##避免出现重复三元组 </span></span><br><span class="line">                l = i+1</span><br><span class="line">                r = num-1            </span><br><span class="line">                <span class="keyword">while</span>(l &lt; r):</span><br><span class="line">                    s = nums[i] + nums[l] + nums[r]</span><br><span class="line">                    <span class="keyword">if</span> s == 0:                        </span><br><span class="line">                        col = [nums[i],nums[l],nums[r]]</span><br><span class="line">                        max_e = max(col)</span><br><span class="line">                        min_e = min(col)   </span><br><span class="line">                        <span class="keyword">if</span>((max_e,min_e)  not <span class="keyword">in</span> d):</span><br><span class="line">                            list_ret.append(col)                     </span><br><span class="line">                            d[(max_e,min_e)] = 1 <span class="comment">###字典用来最终避免三元组重复</span></span><br><span class="line">                        r -= 1</span><br><span class="line">                        l += 1                   </span><br><span class="line">                    <span class="keyword">elif</span> s &gt; 0:</span><br><span class="line">                        r -= 1</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        l += 1</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> list_ret</span><br></pre></td></tr></table></figure></p>
+<p><strong>2013~2018年国际顶级会议上关于深度学习可解释性的论文数量统计</strong><br>年份 | 篇数<br>:-: | :-:<br>2014~2015 | 0<br>2016 | 11<br>2017 | 28<br>2018 | 62</p>
+<blockquote>
+<p><strong>可解释性：算法要对特定任务给出清晰概括，并与人类世界中已定义的原则或原理联结。</strong></p>
+</blockquote>
+<p>解释“黑盒子”：理解深度网络中隐藏层数目，神经元个数和激活函数形式等会对结果产生怎样的影响。</p>
+<p><strong>现状</strong>：以“炼金术”方式不断调整网络隐藏层数目，每个隐藏层中包含的神经元数目、激活函数类型，来调整网络参数，最终得到一个特定任务，特定场景的“最优”深度学习模型。</p>
+<p><strong>评价准则：</strong></p>
+<ul>
+<li>算法结果的合理性（决策依据）</li>
+<li>算法可被改进（输出结果优劣原因）</li>
+<li>算法能提供学习的启迪</li>
+<li>算法要符合法规要求</li>
+</ul>
+<p><strong>五个研究方向：</strong></p>
+<ul>
+<li>卷积神经网络的可视化（基于梯度的滤波器可视化、上卷积网络、图像区域提取与现实）</li>
+<li>卷积神经网络的特征分析（从全局分进行CNN的特征分析、从局部进行CNN的对抗样本学习）</li>
+<li>卷积神经网络的缺陷及优化</li>
+<li>利用传统机器学习模型来解释神经网络</li>
+<li>基于可解释模块的神经网络学习</li>
+</ul>
+<p><strong>未来研究方向：</strong></p>
+<ul>
+<li>深度学习+因果模型</li>
+<li>深度学习+推理</li>
+<li>认知理论和模型</li>
+<li>智能人机交互</li>
+</ul>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月27日 20:39</p>
-        <p>原始链接： <a class="post-url" href="/2019/02/01/LeetCode/LeetCode_15_ 3Sum/" title="LeetCode_15_三数之和">http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/</a></p>
+        <p>最后更新： 2019年09月13日 19:57</p>
+        <p>原始链接： <a class="post-url" href="/2018/09/12/深度学习的可解释性/" title="《深度学习的可解释性》笔记">http://zzyydd.com/2018/09/12/深度学习的可解释性/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -204,7 +229,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/&title=《LeetCode_15_三数之和》 — D&pic=images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2018/09/12/深度学习的可解释性/&title=《《深度学习的可解释性》笔记》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -214,22 +239,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/&title=《LeetCode_15_三数之和》 — D&source=给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2018/09/12/深度学习的可解释性/&title=《《深度学习的可解释性》笔记》 — D&source=吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2018/09/12/深度学习的可解释性/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_15_三数之和》 — D&url=http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/&via=http://zzyydd.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《《深度学习的可解释性》笔记》 — D&url=http://zzyydd.com/2018/09/12/深度学习的可解释性/&via=http://zzyydd.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2018/09/12/深度学习的可解释性/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -239,7 +264,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/02/01/LeetCode/LeetCode_15_ 3Sum/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2018/09/12/深度学习的可解释性/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -251,7 +276,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/LeetCode/" class="color4">LeetCode</a>
+    <a href="/tags/可解释性/" class="color5">可解释性</a>
       
   </li>
 
@@ -265,19 +290,19 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/02/02/LeetCode/LeetCode_16_ 3SumClosest/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/27/LeetCode/LeetCode_01_TwoSum/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          LeetCode_16_最接近的三数之和
+          LeetCode_01_两数之和
         
       </span>
     </a>
   
   
-    <a href="/2019/01/31/LeetCode/LeetCode_14_ LongestCommonPrefix/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">LeetCode_14_最长公共前缀</span>
+    <a href="/2018/09/10/去中心化/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">去中心化</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -286,7 +311,7 @@
 
 
     
-        <div id="SOHUCS" sid="LeetCode/LeetCode_15_ 3Sum"></div>
+        <div id="SOHUCS" sid="深度学习的可解释性"></div>
 <script type="text/javascript">
     (function(){
         var appid = 'cyupvVtiE';
