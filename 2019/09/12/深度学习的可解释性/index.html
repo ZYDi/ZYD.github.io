@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>去中心化 | D</title>
+  <title>《深度学习的可解释性》笔记 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="去中心化">
-<meta name="keywords" content="产品">
+  <meta name="description" content="吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.">
+<meta name="keywords" content="可解释性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="去中心化">
-<meta property="og:url" content="http://zzyydd.com/2018/09/10/去中心化/index.html">
+<meta property="og:title" content="《深度学习的可解释性》笔记">
+<meta property="og:url" content="http://zzyydd.com/2019/09/12/深度学习的可解释性/index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="去中心化">
+<meta property="og:description" content="吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T11:56:08.435Z">
+<meta property="og:updated_time" content="2019-09-13T12:03:02.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="去中心化">
-<meta name="twitter:description" content="去中心化">
+<meta name="twitter:title" content="《深度学习的可解释性》笔记">
+<meta name="twitter:description" content="吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -99,14 +99,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-去中心化" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-深度学习的可解释性" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      去中心化
+      《深度学习的可解释性》笔记
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -114,12 +114,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/产品/">产品</a>
+                      <a href="/categories/深度学习/">深度学习</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2018-09-10
+          <i class="fa fa-calendar"></i>  2019-09-12
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -135,25 +135,41 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>去中心化</p>
+            <p>吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46.</p>
 <a id="more"></a>
-<p><strong>通常理解下的“中心”实际上指的就是在“上地视角”这样的思维模式下，设计出的用户必经的路口，即“流量分发中心”。</strong></p>
-<p>“去中心化”则是指在似于游戏中的“第一人称视角”这样的模式下，将设计焦点放在当前单个用户身上，伴随用户的使用而提供服务的设计模式。</p>
+<p><strong>2013~2018年国际顶级会议上关于深度学习可解释性的论文数量统计</strong><br>年份 | 篇数<br>—|—<br>2014~2015 | 0<br>2016 | 11<br>2017 | 28<br>2018 | 62</p>
 <blockquote>
-<ul>
-<li>品牌与用户都是主体，拥有平等的位置，都可以自成中心。</li>
-<li>主体之间都是伴随状态，所以彼此之间首先兑现的是时间的价值。</li>
-<li>主体之间的推荐构成了信息传播的基本方式。</li>
-</ul>
+<p><strong>可解释性：算法要对特定任务给出清晰概括，并与人类世界中已定义的原则或原理联结。</strong></p>
 </blockquote>
-<p>针对不同的用户推荐不同的物品。</p>
-<p><strong>“去中心化”的本质并不是说消灭中心，而是从用户的“第一人称视角”这个设计思路出发，形成多中心的局面。</strong></p>
-<p>参考文献：<br>1.<a href="http://www.woshipm.com/it/849770.html" target="_blank" rel="noopener">http://www.woshipm.com/it/849770.html</a></p>
+<p>解释“黑盒子”：理解深度网络中隐藏层数目，神经元个数和激活函数形式等会对结果产生怎样的影响。</p>
+<p><strong>现状</strong>：以“炼金术”方式不断调整网络隐藏层数目，每个隐藏层中包含的神经元数目、激活函数类型，来调整网络参数，最终得到一个特定任务，特定场景的“最优”深度学习模型。</p>
+<p><strong>评价准则：</strong></p>
+<ul>
+<li>算法结果的合理性（决策依据）</li>
+<li>算法可被改进（输出结果优劣原因）</li>
+<li>算法能提供学习的启迪</li>
+<li>算法要符合法规要求</li>
+</ul>
+<p><strong>五个研究方向：</strong></p>
+<ul>
+<li>卷积神经网络的可视化（基于梯度的滤波器可视化、上卷积网络、图像区域提取与现实）</li>
+<li>卷积神经网络的特征分析（从全局分进行CNN的特征分析、从局部进行CNN的对抗样本学习）</li>
+<li>卷积神经网络的缺陷及优化</li>
+<li>利用传统机器学习模型来解释神经网络</li>
+<li>基于可解释模块的神经网络学习</li>
+</ul>
+<p><strong>未来研究方向：</strong></p>
+<ul>
+<li>深度学习+因果模型</li>
+<li>深度学习+推理</li>
+<li>认知理论和模型</li>
+<li>智能人机交互</li>
+</ul>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年09月13日 19:56</p>
-        <p>原始链接： <a class="post-url" href="/2018/09/10/去中心化/" title="去中心化">http://zzyydd.com/2018/09/10/去中心化/</a></p>
+        <p>最后更新： 2019年09月13日 20:03</p>
+        <p>原始链接： <a class="post-url" href="/2019/09/12/深度学习的可解释性/" title="《深度学习的可解释性》笔记">http://zzyydd.com/2019/09/12/深度学习的可解释性/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -213,7 +229,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2018/09/10/去中心化/&title=《去中心化》 — D&pic=images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/09/12/深度学习的可解释性/&title=《《深度学习的可解释性》笔记》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -223,22 +239,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2018/09/10/去中心化/&title=《去中心化》 — D&source=去中心化" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/09/12/深度学习的可解释性/&title=《《深度学习的可解释性》笔记》 — D&source=吴 飞, 廖彬兵, 韩亚洪. 深度学习的可解释性[J]. 航空兵器, 2019, 26(1): 39-46." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2018/09/10/去中心化/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/09/12/深度学习的可解释性/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《去中心化》 — D&url=http://zzyydd.com/2018/09/10/去中心化/&via=http://zzyydd.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《《深度学习的可解释性》笔记》 — D&url=http://zzyydd.com/2019/09/12/深度学习的可解释性/&via=http://zzyydd.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2018/09/10/去中心化/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/09/12/深度学习的可解释性/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -248,7 +264,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2018/09/10/去中心化/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/09/12/深度学习的可解释性/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -260,7 +276,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/产品/" class="color3">产品</a>
+    <a href="/tags/可解释性/" class="color5">可解释性</a>
       
   </li>
 
@@ -274,19 +290,19 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/09/12/深度学习的可解释性/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/09/13/互联网思维/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          《深度学习的可解释性》笔记
+          互联网思维
         
       </span>
     </a>
   
   
-    <a href="/2018/08/12/算法导论/算法导论 第八章 线性时间排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">《算法导论》第八章 线性时间排序</span>
+    <a href="/2019/09/10/去中心化/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">去中心化</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -294,15 +310,6 @@
 
 
 
-    
-        <div id="SOHUCS" sid="去中心化"></div>
-<script type="text/javascript">
-    (function(){
-        var appid = 'cyupvVtiE';
-        var conf = '84374e0f44794002cff47d3155d2b9a4';
-        var width = window.innerWidth || document.documentElement.clientWidth;
-        if (width < 960) {
-            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
     
 </section>
         
