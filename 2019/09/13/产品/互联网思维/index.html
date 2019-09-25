@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>LeetCode_41_缺失的第一个正数 | D</title>
+  <title>互联网思维 | D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="D">
   
-  <meta name="description" content="给定一个未排序的整数数组，找出其中没有出现的最小的正整数。">
-<meta name="keywords" content="LeetCode">
+  <meta name="description" content="互联网思维，就是在（移动）互联网+、大数据、云计算等科技不断发展的背景下，对市场、用户、产品、企业价值链乃至对整个商业生态进行重新审视的思考方式。  最早提出互联网思维的是百度公司创始人李彦宏。在百度的一个大型活动上，李彦宏与传统产业的老板、企业家探讨发展问题时，李彦宏首次提到“互联网思维”这个词。他说，我们这些企业家们今后要有互联网思维，可能你做的事情不是互联网，但你的思维方式要逐渐从互联网">
+<meta name="keywords" content="产品">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_41_缺失的第一个正数">
-<meta property="og:url" content="http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/index.html">
+<meta property="og:title" content="互联网思维">
+<meta property="og:url" content="http://zzyydd.com/2019/09/13/产品/互联网思维/index.html">
 <meta property="og:site_name" content="D">
-<meta property="og:description" content="给定一个未排序的整数数组，找出其中没有出现的最小的正整数。">
+<meta property="og:description" content="互联网思维，就是在（移动）互联网+、大数据、云计算等科技不断发展的背景下，对市场、用户、产品、企业价值链乃至对整个商业生态进行重新审视的思考方式。  最早提出互联网思维的是百度公司创始人李彦宏。在百度的一个大型活动上，李彦宏与传统产业的老板、企业家探讨发展问题时，李彦宏首次提到“互联网思维”这个词。他说，我们这些企业家们今后要有互联网思维，可能你做的事情不是互联网，但你的思维方式要逐渐从互联网">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-28T11:09:41.591Z">
+<meta property="og:updated_time" content="2019-09-25T06:12:07.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_41_缺失的第一个正数">
-<meta name="twitter:description" content="给定一个未排序的整数数组，找出其中没有出现的最小的正整数。">
+<meta name="twitter:title" content="互联网思维">
+<meta name="twitter:description" content="互联网思维，就是在（移动）互联网+、大数据、云计算等科技不断发展的背景下，对市场、用户、产品、企业价值链乃至对整个商业生态进行重新审视的思考方式。  最早提出互联网思维的是百度公司创始人李彦宏。在百度的一个大型活动上，李彦宏与传统产业的老板、企业家探讨发展问题时，李彦宏首次提到“互联网思维”这个词。他说，我们这些企业家们今后要有互联网思维，可能你做的事情不是互联网，但你的思维方式要逐渐从互联网">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -99,14 +99,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-LeetCode/LeetCode_41_ FirstMissingPositive" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-产品/互联网思维" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      LeetCode_41_缺失的第一个正数
+      互联网思维
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -114,12 +114,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/LeetCode/">LeetCode</a>
+                      <a href="/categories/产品/">产品</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-02-28
+          <i class="fa fa-calendar"></i>  2019-09-13
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -135,18 +135,42 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>给定一个未排序的整数数组，找出其中没有出现的最小的正整数。</p>
-<a id="more"></a>
-<p>示例 1:<br>输入: [1,2,0]<br>输出: 3</p>
-<p>示例 2:<br>输入: [3,4,-1,1]<br>输出: 2</p>
-<p>示例 3:<br>输入: [7,8,9,11,12]<br>输出: 1</p>
-<p>说明:<br>你的算法的时间复杂度应为O(n)，并且只能使用常数级别的空间。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">firstMissingPositive</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(nums)):</span><br><span class="line">             <span class="keyword">while</span> nums[i]&gt;<span class="number">0</span> <span class="keyword">and</span> nums[i]&lt;=len(nums) <span class="keyword">and</span> nums[nums[i]<span class="number">-1</span>]!=nums[i]:</span><br><span class="line">                nums[nums[i]<span class="number">-1</span>],nums[i] = nums[i],nums[nums[i]<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i]!=(i+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">return</span> i+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> len(nums)+<span class="number">1</span></span><br></pre></td></tr></table></figure>
+            <a id="more"></a>
+<blockquote>
+<p>互联网思维，就是在（移动）互联网+、大数据、云计算等科技不断发展的背景下，对市场、用户、产品、企业价值链乃至对整个商业生态进行重新审视的思考方式。</p>
+</blockquote>
+<p>最早提出互联网思维的是百度公司创始人李彦宏。在百度的一个大型活动上，李彦宏与传统产业的老板、企业家探讨发展问题时，李彦宏首次提到“互联网思维”这个词。他说，我们这些企业家们今后要有互联网思维，可能你做的事情不是互联网，但你的<strong>思维方式</strong>要逐渐从互联网的角度去想问题。</p>
+<p>互联网时代的思考方式，不局限在互联网产品、互联网企业。这里指的互联网，不单指桌面互联网或者移动互联网，是泛互联网，因为未来的网络形态一定是跨越各种终端设备的，台式机、笔记本、平板、手机、手表、眼镜，等等。互联网思维是降低维度，让互联网产业低姿态主动去融合实体产业。</p>
+<p>互联网思维的六大特征：<em>大数据、零距离、趋透明、慧分享、便操作、惠众生</em>。</p>
+<h4 id="名人解读"><a href="#名人解读" class="headerlink" title="名人解读"></a>名人解读</h4><p>就拿我自己来说，过去总觉得互联网仅仅是一种工具，企业里有人用就可以了，没必要每个人都懂都用，总觉得鼠标里点不出万向节。现在不同了，孙子、外孙回来都跟我讲互联网，互联网已经从一种工具变成一种思维，一种文化，一种工作和生活的状态，打印产品也已经近在眼前了。怎么办？只有下功夫学，善学者能，多能者成。<br>——万向集团董事局主席　鲁冠球</p>
+<p>　　互联网思维是零距离和网络化的思维。<br>——海尔集团</p>
+<p>　　淘汰你的不是互联网，而是你不接受互联网。是你不把互联网当成工具跟你的行业结合起来。最终淘汰你的还是你的同行，他们接受了互联网，把互联网跟自己做的事情结合起来，淘汰了你。<br>——万科董事会主席　王石</p>
+<p>　　第一，用户至上：在互联网经济中，只要用你的产品或服务，那就是上帝！很多东西不仅不要钱，还把质量做得特别好，甚至倒贴钱欢迎人们去用。<br>第二，体验为王：只有把一个东西做到极致，超出预期才叫体验。比如有人递过一个矿泉水瓶子，我一喝原来是50度的茅台。这就超出我的体验。<br>第三，免费的商业模式：硬件也正在步入免费的时代。硬件以成本价出售，零利润，然后依靠增值服务去赚钱。电视、盒子、手表等互联网硬件虽然不挣钱，通过广告、电子商务、增值服务等方式来挣钱。<br>第四，颠覆式创新：你要把东西做得便宜，甚至免费；把东西做得特简单，就能打动人心，超出预期的体验上的呼应，就能赢得用户，就为你的成功打下了坚实的基础。<br>——360公司董事长</p>
+<p>互联网思维分为三个层级<br>层级一：数字化；互联网是工具，提高效率，降低成本。<br>层级二：互联网化；利用互联网改变运营流程，电子商务，网络营销<br>层级三：互联网思维；用互联网改造传统行业，商业模式和价值观创新。<br>——前微软亚太研发集团主席、百度总裁　张亚勤</p>
+<p>　　换一种角度，从结果的角度来解读，互联网思维与传统产业的对接，会改变传统的商业模式。从结果看，大致会产生这么几个效应：长尾效应、免费效应、迭代效应和社交效应。互联网思维开放、互动的特性，将改变制造业的整个产业链。因此，用好互联网思维，制造业链条上的研发、生产、物流、市场、销售、售后服务等环节，都要顺势而变。<br>——联想集团执行委员会主席 柳传志</p>
+<h4 id="牛客"><a href="#牛客" class="headerlink" title="牛客"></a>牛客</h4><ol>
+<li>互联网思维即在移动互联网、大数据、云计算等科技发展的情况下，人对用户、产品、市场等整个商业生态，进行重新审视的思考方式。这种思考方式不局限在PC端或移动互联网，而是泛互联网，因为未来的网络形态是跨越各种终端设备的，包括PC端、移动端、手表、眼镜、家具等。</li>
+<li>互联网思维是降维的，让互联网产业低姿态主动去融合实体产业。</li>
+<li>互联网思维是一种做事的方法论，即好的产品自己会说话，让产品说服用户，用户帮产品说服其他的用户。这个方法论可以归结为5个关键词，颠覆、专注、极致、口碑、快速，涵盖6个特征，大数据、零距离、趋透明、慧分享、便操作、惠众生。</li>
+</ol>
+<h4 id="人人都是产品经理"><a href="#人人都是产品经理" class="headerlink" title="人人都是产品经理"></a>人人都是产品经理</h4><ul>
+<li>用户驱动产品：传统企业是产品推销给用户，互联网企业是满足用户需求</li>
+<li>快速迭代：互联网产品更新快，好继续，不好修改继续</li>
+<li>免费和增值服务：先通过免费增长用户量，通过增值服务盈利</li>
+<li>用户体验：“海底捞”</li>
+</ul>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91%E6%80%9D%E7%BB%B4/12028763?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91%E6%80%9D%E7%BB%B4/12028763?fr=aladdin</a></li>
+<li><a href="https://www.nowcoder.com/ta/review-product/review?tpId=88&amp;tqId=29899&amp;query=&amp;asc=true&amp;order=&amp;page=1" target="_blank" rel="noopener">https://www.nowcoder.com/ta/review-product/review?tpId=88&amp;tqId=29899&amp;query=&amp;asc=true&amp;order=&amp;page=1</a></li>
+<li><a href="http://www.woshipm.com/pmd/61080.html" target="_blank" rel="noopener">http://www.woshipm.com/pmd/61080.html</a></li>
+<li><a href="http://www.woshipm.com/operate/94074.html" target="_blank" rel="noopener">http://www.woshipm.com/operate/94074.html</a></li>
+</ol>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月28日 19:09</p>
-        <p>原始链接： <a class="post-url" href="/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/" title="LeetCode_41_缺失的第一个正数">http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/</a></p>
+        <p>最后更新： 2019年09月25日 14:12</p>
+        <p>原始链接： <a class="post-url" href="/2019/09/13/产品/互联网思维/" title="互联网思维">http://zzyydd.com/2019/09/13/产品/互联网思维/</a></p>
         <!--
         <p>版权声明： 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh"> CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！</p>
         -->
@@ -206,7 +230,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/&title=《LeetCode_41_缺失的第一个正数》 — D&pic=images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zzyydd.com/2019/09/13/产品/互联网思维/&title=《互联网思维》 — D&pic=images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -216,22 +240,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/&title=《LeetCode_41_缺失的第一个正数》 — D&source=给定一个未排序的整数数组，找出其中没有出现的最小的正整数。" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zzyydd.com/2019/09/13/产品/互联网思维/&title=《互联网思维》 — D&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zzyydd.com/2019/09/13/产品/互联网思维/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LeetCode_41_缺失的第一个正数》 — D&url=http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/&via=http://zzyydd.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《互联网思维》 — D&url=http://zzyydd.com/2019/09/13/产品/互联网思维/&via=http://zzyydd.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zzyydd.com/2019/09/13/产品/互联网思维/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -241,7 +265,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/02/28/LeetCode/LeetCode_41_ FirstMissingPositive/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://zzyydd.com/2019/09/13/产品/互联网思维/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -253,7 +277,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/LeetCode/" class="color4">LeetCode</a>
+    <a href="/tags/产品/" class="color3">产品</a>
       
   </li>
 
@@ -264,22 +288,28 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#名人解读"><span class="post-toc-text">名人解读</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#牛客"><span class="post-toc-text">牛客</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#人人都是产品经理"><span class="post-toc-text">人人都是产品经理</span></a></li></ol>
+        </nav>
+    </aside>
+    
 
 <nav id="article-nav">
   
-    <a href="/2019/02/28/LeetCode/LeetCode_141_LinkedListCycle/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/09/24/产品/竞品分析/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          LeetCode_141_环形链表
+          在线外卖平台竞品分析
         
       </span>
     </a>
   
   
-    <a href="/2019/02/28/LeetCode/LeetCode_23_ MergeKSortedLists/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">LeetCode_23_合并K个排序链表</span>
+    <a href="/2019/09/12/深度学习的可解释性/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">《深度学习的可解释性》笔记</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
